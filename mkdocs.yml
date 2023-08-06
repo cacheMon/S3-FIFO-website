@@ -3,6 +3,8 @@ site_name: S3-FIFO
 site_description: >-
   Site description
 
+watch:
+  - material
 # Repository
 # repo_name: cacheMon/S3-FIFO-website
 # repo_url: https://github.com/cacheMon/S3-FIFO-website
@@ -13,7 +15,7 @@ theme:
   name: material
   custom_dir: material
   features:
-    - announce.dismiss
+    # - announce.dismiss
     - content.action.edit
     - content.action.view
     - content.code.annotate
