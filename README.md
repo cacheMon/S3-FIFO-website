@@ -1,7 +1,7 @@
 # S3-FIFO-website
 mkdoc source code for S3-FIFO webpage
 
-# Installation
+## Installation
 1. Set upa virtual environment
 ```bash
 python3 -m venv .venv
