@@ -1,0 +1,11 @@
+/* :root {
+    --md-primary-fg-color:        #6587b4;
+    --md-primary-fg-color--light: #b5ccea;
+    --md-primary-fg-color--dark:  #566f8f;
+  } */
+
+  :root {
+    --md-primary-fg-color:        #222323;
+    --md-primary-fg-color--light: #222323;
+    --md-primary-fg-color--dark:  #222323;
+  }
