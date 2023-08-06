@@ -54,8 +54,9 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/favicon.png
-  icon:
-    logo: logo
+  logo: assets/images/logos/s3fifo-logo1.svg
+  # icon:
+  #   logo: logo
 
 # Plugins
 plugins:
@@ -138,6 +139,8 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
+  - Packages:
+    - packages/index.md
   - Blog:
     - blog/index.md
     - S3-FIFO: blog/posts/S3-FIFO.md
