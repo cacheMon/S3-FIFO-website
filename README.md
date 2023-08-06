@@ -2,9 +2,10 @@
 mkdoc source code for S3-FIFO webpage
 
 ## Installation
-1. Set upa virtual environment
+1. Set up a virtual environment
 ```bash
 python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 2. Open up a terminal and install Material for MkDocs with (starting from 9.2.0b0, Material supports blog feature):
