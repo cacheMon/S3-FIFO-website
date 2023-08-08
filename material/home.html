@@ -5,7 +5,31 @@
 {{ super() }}
 
 <!-- Hero for landing page -->
-<style>.md-header{position:sticky}.md-main__inner{margin:0}.md-content{display:none}@media screen and (min-width:60em){.md-sidebar--secondary{display:none}}@media screen and (min-width:76.25em){.md-sidebar--primary{display:none}}</style>
+<style>
+  .md-header {
+    position: sticky
+  }
+
+  .md-main__inner {
+    margin: 0
+  }
+
+  .md-content {
+    display: none
+  }
+
+  @media screen and (min-width:60em) {
+    .md-sidebar--secondary {
+      display: none
+    }
+  }
+
+  @media screen and (min-width:76.25em) {
+    .md-sidebar--primary {
+      display: none
+    }
+  }
+</style>
 
 <!--binbash leverage documetation-->
 <section class="section-white-body w-100">
@@ -18,37 +42,40 @@
           <!-- documentation -->
         </p>
       </div>
-      <img src="assets/images/logos/binbash-landing-header.svg" class="laverage-header-img d-lg-none d-xl-none mx-auto mb-5" />
-      <p class="h3 text-xs-center spacing">The best cache eviction algorithm</p>
-      <p class="h3 text-xs-center spacing"><span class="t-b">Efficient</span>: up to xx% miss ratio lower than LRU</p>
-      <p class="h3 text-xs-center spacing"><span class="t-b">Robust</span>: evaluated on xx traces (xx TB) from xx companies</p>
-      <p class="h3 text-xs-center spacing"><span class="t-b">Scalable</span>: NO locking</p>
-      <p class="h3 text-xs-center spacing"><span class="t-b">Simple</span>: only FIFO queues</p>
-      <p class="h3 text-xs-center spacing"><span class="t-b">Flash-friendly</span>: to come</p>
+      <img src="assets/images/logos/binbash-landing-header.svg"
+        class="laverage-header-img d-lg-none d-xl-none mx-auto mb-5" />
+      <p class="h2 text-xs-center spacing"><b>scalable</b> and <b>efficient</b> cache eviction</p>
+      <p class="h3 text-xs-center spacing"><span class="t-b"
+          style="font-family:Monaco; color:orange;">Efficient</span><span style="font-family:arial;">: up to 72% lower
+          miss ratio than LRU </span></p>
+      <p class="h3 text-xs-center spacing"><span class="t-b"
+          style="font-family:Monaco; color:blue;">Robust</span><span style="font-family:arial;">: evaluated on
+          <b>6594</b> workloads (<b>856</b> billon requests, 21 PB) from 12 companies</span></p>
+      <p class="h3 text-xs-center spacing"><span class="t-b"
+          style="font-family:Monaco; color:red;">Scalable</span><span style="font-family:arial;">: <b>NO</b>
+          locking</span></p>
+      <p class="h3 text-xs-center spacing"><span class="t-b"
+          style="font-family:Monaco; color:green;">Simple</span><span style="font-family:arial;">: only FIFO
+          queues</span></p>
+      <p class="h3 text-xs-center spacing"><span class="t-b"
+          style="font-family:Monaco; color:burlywood;">Flash-friendly</span><span style="font-family:arial;">: to
+          come</span></p>
       <div class="conteiner-row conteiner-xs">
-        <button
-          type="button"
-          title="{{ page.next_page.title | e }}"
-          onclick="scrollToSecondSection()"
-          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow"
-        >
-            Learn More
+        <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
+          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
+          Learn More
         </button>
-        <button
-          type="button"
-          title="{{ page.next_page.title | e }}"
-          onclick="scrollToSecondSection()"
-          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow"
-        >
+        <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
+          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Python Package
         </button>
-        <button
-          type="button"
-          title="{{ page.next_page.title | e }}"
-          onclick="scrollToSecondSection()"
-          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow"
-        >
-            JS package
+        <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
+          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
+          Javascript package
+        </button>
+        <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
+          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
+          More to come soon
         </button>
         <!-- <button
           type="button"
@@ -69,12 +96,13 @@
   </div>
 </section>
 
-<section class="section-white-body w-100", id="learnmore">
+<section class="section-white-body w-100" , id="learnmore">
   <div class="text-align-center t-b text-dark h2 mt-large">
     <p>How to use</p>
   </div>
   <div class="two-column-container my-4">
-    <pre data-dependencies="python" class="language-python" tabindex="0" style="box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); margin-right: 2rem;">
+    <pre data-dependencies="python" class="language-python" tabindex="0"
+      style="box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); margin-right: 2rem;">
 <code class="language-python line-numbers">
 def factorial(n):       
   if n == 0:             # Base case: if n is 0, return 1
@@ -87,7 +115,8 @@ def factorial(n):
 print(factorial(5))</code>
     </pre>
 
-    <pre data-dependencies="python" class="language-python" tabindex="0" style="box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); margin-left: 2rem;">
+    <pre data-dependencies="python" class="language-python" tabindex="0"
+      style="box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); margin-left: 2rem;">
 <code class="language-python line-numbers">
 def factorial(n):        
   if n == 0:             # Base case: if n is 0, return 1
@@ -107,7 +136,7 @@ print(factorial(5))</code>
 </section>
 
 
-<section class="section-dark-body w-100", id="howgood">
+<section class="section-dark-body w-100" , id="howgood">
   <div class="text-align-center t-b text-white h2 my-5">
     <p>How good is S3-FIFO?</p>
   </div>
@@ -129,21 +158,22 @@ print(factorial(5))</code>
   </div>
 
   <p class="text-align-center t-b text-white h3 mb-5">
-    S3-FIFO reduces your LRU cache size by <span class="h2">xx</span> 
-    and improves the throughput by <span class="h2">6x</span> 
+    S3-FIFO reduces your LRU cache size by <span class="h2">xx</span>
+    and improves the throughput by <span class="h2">6x</span>
   </p>
-  
+
 </section>
 
 
 
-<section class="section-white-body w-100", id="howdoeswork">
+<section class="section-white-body w-100" , id="howdoeswork">
   <div class="text-align-center t-b text-dark h2 mt-5">
     <p>How does S3-FIFO work?</p>
   </div>
 
   <p class="text-align-center t-b text-dark h3 my-3">
-    <span class="h2-2 italic">S</span>imple and <span class="h2-2 italic">S</span>calable caching with <span class="h2-2 italic">three</span> static <span class="h2-2 italic">FIFO</span> queues 
+    <span class="h2-2 italic">S</span>imple and <span class="h2-2 italic">S</span>calable caching with <span
+      class="h2-2 italic">three</span> static <span class="h2-2 italic">FIFO</span> queues
   </p>
 
   <div class="center-container my-5">
@@ -153,13 +183,13 @@ print(factorial(5))</code>
 </section>
 
 
-<section class="section-dark-body w-100", id="whydoeswork">
+<section class="section-dark-body w-100" , id="whydoeswork">
   <div class="text-align-center t-b text-while h2 mt-5">
     <p>Why does S3-FIFO work?</p>
   </div>
 
   <p class="text-align-center t-b text-white h3 my-3">
-    A huge number of objects accessed once (called one-hit wonders) 
+    A huge number of objects accessed once (called one-hit wonders)
     calling for precise
     <a href="https://best-cache.com/2023/fifo-lru/" target="_blank" class="custom-link">quick demotion</a>:<br>
     S3-FIFO <span class="h3 italic">quickly</span> removes objects that will not be accessed in the future
@@ -177,7 +207,7 @@ print(factorial(5))</code>
 </section>
 
 
-<section class="section-white-body w-100", id="adoption">
+<section class="section-white-body w-100" , id="adoption">
   <div class="text-align-center t-b text-dark h2 mt-5">
     <p>Adoption</p>
   </div>
@@ -188,7 +218,7 @@ print(factorial(5))</code>
 
 </section>
 
-<section class="section-white-body w-100", id="sponsors">
+<section class="section-white-body w-100" , id="sponsors">
   <div class="text-align-center t-b text-dark h2 mt-5">
     <p>Acknowledgement</p>
   </div>
@@ -201,7 +231,7 @@ print(factorial(5))</code>
 </section>
 
 
-<section class="section-white-body w-100", id="contactus">
+<section class="section-white-body w-100" , id="contactus">
   <div class="text-align-center t-b text-dark h2 mt-5">
     <p>Contact Us</p>
   </div>
@@ -216,51 +246,35 @@ print(factorial(5))</code>
 <!--Footer-->
 <footer class="bg-dark w-100">
   <div class="center-footer my-4">
-    <div class="icon-container"> 
-    <a href="https://join.slack.com/t/cachemon/shared_invite/zt-20pjil08z-f9d1Ui~p1gfBnsedHP9x8Q" target="_blank">
-      <img
-        src="assets/images/logos/socialmedia/slack.svg"
-        title="Slack"
-        class="mx-1 cursor-pointer item-social-media"
-        width="10%"
-      />
-    </a>
-    <a href="https://www.linkedin.com/in/yazhuo-zhang-80833b15b/" target="_blank">
-      <img
-        src="assets/images/logos/socialmedia/linkedIn.svg"
-        title="linkedIn"
-        class="mx-1 cursor-pointer item-social-media"
-        width="10%"
-      />
-    </a>
-    <a href="https://github.com/cacheMon" target="_blank">
-      <img
-        src="assets/images/logos/socialmedia/github.svg"
-        title="Github"
-        class="mx-1 cursor-pointer item-social-media"
-        width="10%"
-      />
-    </a>
-    <a href="https://twitter.com/cachemon_org" target="_blank">
-      <img
-        src="assets/images/logos/socialmedia/twitter.svg"
-        title="Twitter"
-        class="mx-1 cursor-pointer item-social-media"
-        width="10%"
-      />
-    </a>
-  </div>
+    <div class="icon-container">
+      <a href="https://join.slack.com/t/cachemon/shared_invite/zt-20pjil08z-f9d1Ui~p1gfBnsedHP9x8Q" target="_blank">
+        <img src="assets/images/logos/socialmedia/slack.svg" title="Slack" class="mx-1 cursor-pointer item-social-media"
+          width="10%" />
+      </a>
+      <a href="https://www.linkedin.com/in/yazhuo-zhang-80833b15b/" target="_blank">
+        <img src="assets/images/logos/socialmedia/linkedIn.svg" title="linkedIn"
+          class="mx-1 cursor-pointer item-social-media" width="10%" />
+      </a>
+      <a href="https://github.com/cacheMon" target="_blank">
+        <img src="assets/images/logos/socialmedia/github.svg" title="Github"
+          class="mx-1 cursor-pointer item-social-media" width="10%" />
+      </a>
+      <a href="https://twitter.com/cachemon_org" target="_blank">
+        <img src="assets/images/logos/socialmedia/twitter.svg" title="Twitter"
+          class="mx-1 cursor-pointer item-social-media" width="10%" />
+      </a>
+    </div>
   </div>
 </footer>
 
 <script>
-function scrollToSecondSection() {
-  const secondSection = document.getElementById('learnmore');
-  secondSection.scrollIntoView({ behavior: 'smooth' });
-}
+  function scrollToSecondSection() {
+    const secondSection = document.getElementById('learnmore');
+    secondSection.scrollIntoView({ behavior: 'smooth' });
+  }
 
 
-// barchar (performance-chart)
+  // barchar (performance-chart)
   // Data
   const dataChartBarDoubleDatasetsExample = {
     type: 'bar',
@@ -321,48 +335,48 @@ function scrollToSecondSection() {
 
   // throughput-chart
   const dataLine = {
-  type: 'line',
-  data: {
-    labels: ['1', '2' , '4' , '8' , '16'],
-    datasets: [
-      {
-        label: 'LRU',
-        data: [2, 3, 4, 5, 6],
-        borderColor: '#4F628E',
-        backgroundColor: '#4F628E',
-      },
-      {
-        label: 'S3-FIFO',
-        data: [2, 7, 12, 18, 28],
-        borderColor: '#FFA630',
-        backgroundColor: '#FFA630',
-      },
-    ],
-  },
-};
+    type: 'line',
+    data: {
+      labels: ['1', '2', '4', '8', '16'],
+      datasets: [
+        {
+          label: 'LRU',
+          data: [2, 3, 4, 5, 6],
+          borderColor: '#4F628E',
+          backgroundColor: '#4F628E',
+        },
+        {
+          label: 'S3-FIFO',
+          data: [2, 7, 12, 18, 28],
+          borderColor: '#FFA630',
+          backgroundColor: '#FFA630',
+        },
+      ],
+    },
+  };
 
-const optionsThroughput = {
-  options: {
-    scales: {
-      x: {
-        title: { display: true, text: 'Number of threads', fontSize: 26},
-      },
-      y: {
-        title: { display: true, text: 'Throughput (MOPS/s)', fontSize: 26},
+  const optionsThroughput = {
+    options: {
+      scales: {
+        x: {
+          title: { display: true, text: 'Number of threads', fontSize: 26 },
+        },
+        y: {
+          title: { display: true, text: 'Throughput (MOPS/s)', fontSize: 26 },
+        },
       },
     },
-  },
-};
+  };
 
-new te.Chart(
-  document.getElementById('throughput-chart'), 
-  dataLine,
-  optionsThroughput
-);
+  new te.Chart(
+    document.getElementById('throughput-chart'),
+    dataLine,
+    optionsThroughput
+  );
 
 
-// barchar (cachesize-chart)
-const dataCachesizeBarChart = {
+  // barchar (cachesize-chart)
+  const dataCachesizeBarChart = {
     type: 'bar',
     data: {
       labels: ['Meta', 'Twitter', 'MSR', 'Wiki', 'Alibaba', 'Tencent'],
@@ -419,7 +433,7 @@ const dataCachesizeBarChart = {
   );
 
   // barchar (cachesize-chart)
-const dataOnehitwonderBarChart = {
+  const dataOnehitwonderBarChart = {
     type: 'bar',
     data: {
       labels: ['0.01', '0.1', '0.5'],

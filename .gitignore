@@ -1,2 +1,8 @@
-venv/
+.venv/
 .DS_Store
+site/
+test
+
+
+
+
