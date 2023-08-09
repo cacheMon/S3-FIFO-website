@@ -9,3 +9,8 @@
     --md-primary-fg-color--light: #222323;
     --md-primary-fg-color--dark:  #222323;
   }
+
+  .md-tabs__link{
+    font-size: 20px !important;
+    margin-top: 0.5rem !important;
+  }
