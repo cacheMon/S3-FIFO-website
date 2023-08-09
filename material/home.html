@@ -29,39 +29,47 @@
       display: none
     }
   }
+
+  code[class="language-python"] {
+        font-size: 0.75rem;
+  }
+
+  code[class="language-javascript"] {
+        font-size: 0.75rem;
+  }
+  
 </style>
 
-<!--binbash leverage documetation-->
+<!--documetation-->
 <section class="section-white-body w-100">
   <div class="md-grid conteiner-row pt-1 pt-lg-5 my-4">
     <div class="px-3 ctx-header-text conteiner">
       <div class="conteiner-row">
-        <p class="h1 text-xs-center spacing t-b">
-          S3-FIFO
-          <!-- <img src="assets/images/logos/leverage-title-logo.svg" class="mx-3 leverage-title-logo" height="22%"/> -->
-          <!-- documentation -->
+        <p class="h1 text-xs-center t-b">
+          <span style= "color:rgb(0, 0, 0);">S3-FIFO</span>
         </p>
       </div>
       <img src="assets/images/logos/binbash-landing-header.svg"
-        class="laverage-header-img d-lg-none d-xl-none d-md-none d-sm-none d-xs-none mx-auto mb-5" />
-      <p class="h2 text-xs-center spacing"><b>scalable</b> and <b>efficient</b> cache eviction</p>
+        class="laverage-header-img d-lg-none d-xl-none d-md-none d-sm-none d-xs-none mx-auto" />
+      <p class="h2 text-xs-center spacing t-b" style="font-family:Sans-serif;"><b>Scalable</b> and <b>Efficient</b> Cache Eviction</p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Monaco; color:orange;">Efficient</span><span style="font-family:arial;">: up to 72% lower
+          style="font-family:Sans-serif; color:#E65100;">Efficient</span><span style="font-family:arial; color:rgb(73, 69, 69);">: up to 72% lower
           miss ratio than LRU </span></p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Monaco; color:blue;">Robust</span><span style="font-family:arial;">: evaluated on
-          <b>6594</b> workloads (<b>856</b> billon requests, 21 PB) from 12 companies</span></p>
+          style="font-family:Sans-serif; color:#EF6C00;">Robust</span><span style="font-family:arial; color:rgb(73, 69, 69);">: evaluated on
+          <b>6594</b> workloads from 12 companies</span></p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Monaco; color:red;">Scalable</span><span style="font-family:arial;">: <b>NO</b>
+          style="font-family:Sans-serif; color:#FB8C00;">Scalable</span><span style="font-family:arial; color:rgb(73, 69, 69);">: <b>NO</b>
           locking</span></p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Monaco; color:green;">Simple</span><span style="font-family:arial;">: only FIFO
+          style="font-family:Sans-serif; color:#FFA726;">Simple</span><span style="font-family:arial; color:rgb(73, 69, 69);">: only FIFO
           queues</span></p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Monaco; color:burlywood;">Flash-friendly</span><span style="font-family:arial;">: to
+          style="font-family:Sans-serif; color:#FFCC80;">Flash-friendly</span><span style="font-family:arial; color:rgb(73, 69, 69);">: to
           come</span></p>
       <div class="conteiner-row conteiner-xs">
-        <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
+        <button type="button" title="{{ page.next_page.title | e }}" 
+          onclick="window.open('https://blog.jasony.me/system/cache/2023/08/01/s3fifo', '_blank')"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Learn More
         </button>
@@ -73,10 +81,10 @@
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Javascript package
         </button>
-        <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
+        <!-- <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           More to come soon
-        </button>
+        </button> -->
         <!-- <button
           type="button"
           title="{{ page.next_page.title | e }}"
@@ -89,44 +97,63 @@
     </div>
     <div class="ctx-header-img d-lg">
       <!-- barchar -->
-      <div class="mx-auto w-9/10 overflow-hidden" style="margin-top: 2rem;">
-        <canvas id="bar-chart" style="width: 130%; height: 550px;"></canvas>
+      <div class="mx-auto w-9/10 overflow-hidden" style="margin-top: 6rem;">
+        <canvas id="bar-chart" style="width: 120%; height: 300%;"></canvas>
+        <!-- <canvas id="bar-chart" class="efficiency-bar-chart"></canvas> -->
       </div>
     </div>
   </div>
 </section>
 
 <section class="section-white-body w-100" , id="learnmore">
-  <div class="text-align-center t-b text-dark h2 mt-large">
+  <div class="text-align-center t-b text-dark h1 mt-large">
     <p>How to use</p>
   </div>
   <div class="two-column-container my-4">
     <pre data-dependencies="python" class="language-python" tabindex="0"
       style="box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); margin-right: 2rem;">
 <code class="language-python line-numbers">
-def factorial(n):       
-  if n == 0:             # Base case: if n is 0, return 1
-      return 1
-  else:
-      result = 1
-      for i in range(1, n + 1):  # Loop from 1 to n
-          result *= i    # Multiply result by each value of i
-      return result     # Return the final result
-print(factorial(5))</code>
+from cachemonCache import S3FIFO
+
+# Create a cache backed by DRAM
+cache = S3FIFO(size=10) # or cache=LRU(size=10)
+
+# Add an object to the cache
+cache.put("key", "value", ttl=10)
+
+# Get an object from the cache
+cache.get("key")
+print(value) # Outputs: "value" or None
+
+# Remove an object from the cache
+cache.delete("key")
+
+# Check if an object is in the cache
+cache.has("key")
+print(exists)  # Outputs: False</code>
     </pre>
 
     <pre data-dependencies="python" class="language-python" tabindex="0"
       style="box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); margin-left: 2rem;">
-<code class="language-python line-numbers">
-def factorial(n):        
-  if n == 0:             # Base case: if n is 0, return 1
-      return 1
-  else:
-      result = 1
-      for i in range(1, n + 1):  # Loop from 1 to n
-          result *= i    # Multiply result by each value of i
-      return result     # Return the final result
-print(factorial(5))</code>    
+<code class="language-javascript line-numbers">
+  const { S3FIFO } = require('cachemonCache');
+
+  // Create a cache backed by DRAM
+  const cache = new S3FIFO({ size: 10 }); 
+  
+  // Add an object to the cache
+  cache.put("key", "value", { ttl: 10 });
+  
+  // Get an object from the cache
+  const value = cache.get("key");
+  console.log(value); // Outputs: "value"
+  
+  // Remove an object from the cache
+  cache.delete("key");
+  
+  // Check if an object is in the cache
+  const exists = cache.has("key");
+  console.log(exists); // Outputs: false</code>    
     </pre>
   </div>
 
@@ -137,7 +164,7 @@ print(factorial(5))</code>
 
 
 <section class="section-dark-body w-100" , id="howgood">
-  <div class="text-align-center t-b text-white h2 my-5">
+  <div class="text-align-center t-b text-white h1 my-5">
     <p>How good is S3-FIFO?</p>
   </div>
 
@@ -157,9 +184,9 @@ print(factorial(5))</code>
     </div>
   </div>
 
-  <p class="text-align-center t-b text-white h3 mb-5">
-    S3-FIFO reduces your LRU cache size by <span class="h2">xx</span>
-    and improves the throughput by <span class="h2">6x</span>
+  <p class="text-align-center t-b text-white h2 mb-5">
+    S3-FIFO reduces your LRU cache size by <span style="color: #E65100; font-size: 3rem;">xx</span>
+    and improves the throughput by <span style="color: #E65100; font-size: 3rem;">6x</span>
   </p>
 
 </section>
@@ -167,16 +194,16 @@ print(factorial(5))</code>
 
 
 <section class="section-white-body w-100" , id="howdoeswork">
-  <div class="text-align-center t-b text-dark h2 mt-5">
+  <div class="text-align-center t-b text-dark h1 mt-5">
     <p>How does S3-FIFO work?</p>
   </div>
 
-  <p class="text-align-center t-b text-dark h3 my-3">
-    <span class="h2-2 italic">S</span>imple and <span class="h2-2 italic">S</span>calable caching with <span
-      class="h2-2 italic">three</span> static <span class="h2-2 italic">FIFO</span> queues
+  <p class="text-align-center t-b text-dark h2 my-1">
+    <span class="h2 italic" style="color: #E65100;">S</span>imple and <span class="h2 italic"style="color: #E65100;">S</span>calable caching with <span
+      class="h2 italic">three</span> <span class="h2 italic" style="color: #E65100;">S</span>tatic <span class="h2 italic">FIFO</span> queues
   </p>
 
-  <div class="center-container my-5">
+  <div class="center-container my-4">
     <img src="assets/images/illustrations/diagram_s3fifo.png" class="howdoeswork-img my-xs-5 my-sm-5 my-md-5" />
   </div>
 
@@ -184,15 +211,15 @@ print(factorial(5))</code>
 
 
 <section class="section-dark-body w-100" , id="whydoeswork">
-  <div class="text-align-center t-b text-while h2 mt-5">
+  <div class="text-align-center t-b text-while h1 mt-5">
     <p>Why does S3-FIFO work?</p>
   </div>
 
-  <p class="text-align-center t-b text-white h3 my-3">
+  <p class="text-align-center t-b text-white h2-2 my-2">
     A huge number of objects accessed once (called one-hit wonders)
     calling for precise
-    <a href="https://best-cache.com/2023/fifo-lru/" target="_blank" class="custom-link">quick demotion</a>:<br>
-    S3-FIFO <span class="h3 italic">quickly</span> removes objects that will not be accessed in the future
+    <a href="https://blog.jasony.me/system/cache/2023/06/24/fifo-lru" target="_blank" class="custom-link">quick demotion</a>:<br>
+    S3-FIFO <span class="h2-2 italic">quickly</span> removes objects that will not be accessed in the future
   </p>
 
   <div class="center-container my-5">
@@ -208,7 +235,7 @@ print(factorial(5))</code>
 
 
 <section class="section-white-body w-100" , id="adoption">
-  <div class="text-align-center t-b text-dark h2 mt-5">
+  <div class="text-align-center t-b text-dark h1-2 mt-4">
     <p>Adoption</p>
   </div>
 
@@ -219,31 +246,38 @@ print(factorial(5))</code>
 </section>
 
 <section class="section-white-body w-100" , id="sponsors">
-  <div class="text-align-center t-b text-dark h2 mt-5">
+  <div class="text-align-center t-b text-dark h1-2 mt-4">
     <p>Acknowledgement</p>
   </div>
 
   <div class="text-align-center t-500 text-dark h3 my-3">
-    <p><span class="t-b italic">Sponsors:</span> NSF, Meta, Google, AWS, MSR, CMU PDL, Emory Simbiosys, cloudlab</p>
-    <p><span class="t-b italic">Dataset source:</span> Meta, Tencent, MSR, Wiki, CloudPhysics</p>
+    <p><span class="t-b italic">Sponsors:</span> NSF, Meta, Google, AWS, Microsoft, CMU PDL, Emory Simbiosys, cloudlab</p>
+    <p><span class="t-b italic">Dataset source:</span> Meta, Tencent, Microsoft, Wiki, CloudPhysics</p>
   </div>
 
 </section>
 
 
 <section class="section-white-body w-100" , id="contactus">
-  <div class="text-align-center t-b text-dark h2 mt-5">
+  <div class="text-align-center t-b text-dark h1-2 mt-4">
     <p>Contact Us</p>
   </div>
 
   <div class="text-align-center t-500 text-dark h3 mt-3 mb-5">
-    <a href="mailto:cachemon.org@gmail.com" target="_blank" class="custom-link">cachemon.org@gmail.com</a>
+    <a href="mailto:cachemon.org@gmail.com" target="_blank" class="custom-link">
+      <i class="fa-solid fa-envelope fa-2x"></i></a>
+    <a href="https://join.slack.com/t/cachemon/shared_invite/zt-20pjil08z-f9d1Ui~p1gfBnsedHP9x8Q" target="_blank" class="custom-link">
+      <i class="fa-brands fa-slack fa-2x"></i></a>
+    <a href="https://twitter.com/cachemon_org" target="_blank" class="custom-link">
+      <i class="fa-brands fa-twitter fa-2x"></i></a>
+    <a href="https://github.com/cacheMon" target="_blank" class="custom-link">
+      <i class="fa-brands fa-github fa-2x"></i></a>
   </div>
 
 </section>
 
 
-<!--Footer-->
+<!-- Footer
 <footer class="bg-dark w-100">
   <div class="center-footer my-4">
     <div class="icon-container">
@@ -265,7 +299,7 @@ print(factorial(5))</code>
       </a>
     </div>
   </div>
-</footer>
+</footer> -->
 
 <script>
   function scrollToSecondSection() {
@@ -279,23 +313,29 @@ print(factorial(5))</code>
   const dataChartBarDoubleDatasetsExample = {
     type: 'bar',
     data: {
-      labels: ['Meta', 'Twitter', 'MSR', 'Wiki', 'Alibaba', 'Tencent'],
+      labels: ['Meta', 'Twitter', 'Wiki', 'Alibaba', 'TencentBlock', 'TencentPhoto', 'CDN1', 'CDN2'],
       datasets: [
         {
           label: 'FIFO',
-          data: [0.12, 0.15, 0.15, 0.21, 0.13, 0.19],
+          data: [0.0938,0.0574,0.1087,0.1563,0.0967,0.2712,0.1083,0.0767],
           backgroundColor: '#889ABD',
           borderColor: '#889ABD',
         },
         {
           label: 'LRU',
-          data: [0.25, 0.34, 0.45, 0.39, 0.31, 0.49],
+          data: [0.0812,0.0488,0.0803,0.1394,0.0659,0.2496,0.1034,0.0688],
+          backgroundColor: '#778fc7',
+          borderColor: '#778fc7',
+        },
+        {
+          label: 'TinyLFU',
+          data: [0.0853,0.0445,0.0605,0.1474,0.0715,0.3241,0.1037,0.0656],
           backgroundColor: '#4F628E',
           borderColor: '#4F628E',
         },
         {
           label: 'S3-FIFO',
-          data: [0.65, 0.62, 0.62, 0.68, 0.69, 0.66],
+          data: [0.0755,0.0424,0.0629,0.1317,0.0551,0.2373,0.0997,0.0622],
           backgroundColor: '#FFA630',
           borderColor: '#FFA630',
         },
@@ -379,23 +419,17 @@ print(factorial(5))</code>
   const dataCachesizeBarChart = {
     type: 'bar',
     data: {
-      labels: ['Meta', 'Twitter', 'MSR', 'Wiki', 'Alibaba', 'Tencent'],
+      labels: ['Meta', 'Twitter', 'Wikimedia ', 'Alibaba', 'Tencent', 'CDN1', 'CDN2'],
       datasets: [
-        // {
-        //   label: 'FIFO',
-        //   data: [0.12, 0.15, 0.15, 0.21, 0.13, 0.19],
-        //   backgroundColor: '#889ABD',
-        //   borderColor: '#889ABD',
-        // },
         {
           label: 'LRU',
-          data: [500, 340, 450, 390, 310, 490],
+          data: [1,1,1,1,1,1,1],
           backgroundColor: '#4F628E',
           borderColor: '#4F628E',
         },
         {
           label: 'S3-FIFO',
-          data: [200, 140, 300, 100, 120, 210],
+          data: [0.78,0.64,0.71,0.81,0.84,0.72,0.54],
           backgroundColor: '#FFA630',
           borderColor: '#FFA630',
         },
@@ -415,7 +449,7 @@ print(factorial(5))</code>
           },
           title: {
             display: true,
-            text: 'Cache Size',
+            text: 'Cache Size (to achieve around 10% miss ratio)',
           },
         },
         x:
@@ -440,7 +474,7 @@ print(factorial(5))</code>
       datasets: [
         {
           label: 'Zipf',
-          data: [0.9, 0.89, 0.75],
+          data: [0.88, 0.80, 0.52],
           backgroundColor: '#4F628E',
           borderColor: '#4F628E',
         },
