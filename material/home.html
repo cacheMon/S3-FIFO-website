@@ -73,7 +73,8 @@
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Learn More
         </button>
-        <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
+        <button type="button" title="{{ page.next_page.title | e }}"
+        onclick="window.open('https://github.com/cacheMon/py-cachemonCache/tree/main', '_blank')"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Python Package
         </button>
@@ -185,7 +186,7 @@ print(exists)  # Outputs: False</code>
   </div>
 
   <p class="text-align-center t-b text-white h2 mb-5">
-    S3-FIFO reduces your LRU cache size by <span style="color: #E65100; font-size: 3rem;">xx</span>
+    S3-FIFO reduces your LRU cache size by <span style="color: #E65100; font-size: 3rem;">40%</span>
     and improves the throughput by <span style="color: #E65100; font-size: 3rem;">6x</span>
   </p>
 
@@ -399,10 +400,47 @@ print(exists)  # Outputs: False</code>
     options: {
       scales: {
         x: {
-          title: { display: true, text: 'Number of threads', fontSize: 26 },
+          title: { 
+            display: true, 
+            text: 'Number of threads', 
+            font: {
+              size: 20,
+            },
+            color: '#e6e5e3'
+          },
+          ticks: {
+            font: {
+              size: 20,
+            },
+            color: '#e6e5e3'
+          }
         },
         y: {
-          title: { display: true, text: 'Throughput (MOPS/s)', fontSize: 26 },
+          title: { 
+            display: true, 
+            text: 'Throughput (MOPS/s)', 
+            font: {
+              size: 20,
+            },
+            color: '#e6e5e3'
+          },
+          ticks: {
+            font: {
+              size: 20,
+            },
+            color: '#e6e5e3'
+          },
+        },
+      },
+
+      plugins: {
+        legend: {
+          labels: {
+            font: {
+              size: 20, // Set the font size of the legend here
+            },
+            color: '#e6e5e3'
+          },
         },
       },
     },
@@ -449,12 +487,41 @@ print(exists)  # Outputs: False</code>
           },
           title: {
             display: true,
-            text: 'Cache Size (to achieve around 10% miss ratio)',
+            // text: [['Cache Size'], ['to achieve around 10% miss ratio)']],
+            // text: ['Cache Size', 'to achieve around 10% miss ratio'],
+            text: "Cache Size",
+            color: '#e6e5e3',
+            font: {
+              size: 20,
+              
+            }
           },
+          ticks: {
+            font: {
+              size: 20,
+            },
+            color: '#e6e5e3',
+          }
         },
         x:
         {
           stacked: false,
+          ticks: {
+            font: {
+              size: 20,
+            },
+            color: '#e6e5e3',
+          }
+        },
+      },
+      plugins: {
+        legend: {
+          labels: {
+            font: {
+              size: 20, // Set the font size of the legend here
+            },
+            color: '#e6e5e3'
+          },
         },
       },
     },
@@ -515,6 +582,10 @@ print(exists)  # Outputs: False</code>
           title: {
             display: true,
             text: 'Cache size (fraction of objects in the trace)',
+            font: {
+              size: 20,
+              color: '#000000'
+            }
           },
         },
       },
