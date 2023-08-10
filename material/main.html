@@ -71,4 +71,15 @@
     rel="stylesheet"
     href="{{ 'assets/stylesheets/overrides.css' | url }}"
   />-->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MZCBZV7YYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MZCBZV7YYN');
+</script>
+
 {% endblock %}
