@@ -8,13 +8,12 @@ categories:
 ---
 
 # FIFO queues are all you need for cache eviction
-> **TL;DR** 
-> 
-> In this blog, I will describe a simple, scalable FIFO-based eviction algorithm with three static queues (S3-FIFO). Evaluated on 6594 cache traces from 14 datasets, we show that S3-FIFO has lower miss ratios than 12 state-of-the-art algorithms. Moreover, S3-FIFO’s efficiency is robust — it has the lowest mean miss ratio on 10 of the 14 datasets. The use of FIFO queues enables S3-FIFO to achieve good scalability with 6× higher throughput compared to optimized LRU at 16 threads. 
-> 
-> Our insight is that most objects in skewed cache workloads will only be accessed once in a short window, so it is critical to evict them early. And the key of S3-FIFO is a small FIFO queue that filters out most objects from entering the main cache. We show that filtering with a small static FIFO queue has a guaranteed eviction time and higher eviction precision compared to state-of-the-art adaptive algorithms.
+**TL;DR** 
 
+In this blog, I will describe a simple, scalable FIFO-based eviction algorithm with three static queues (S3-FIFO). Evaluated on 6594 cache traces from 14 datasets, we show that S3-FIFO has lower miss ratios than 12 state-of-the-art algorithms. Moreover, S3-FIFO’s efficiency is robust — it has the lowest mean miss ratio on 10 of the 14 datasets. The use of FIFO queues enables S3-FIFO to achieve good scalability with 6× higher throughput compared to optimized LRU at 16 threads. 
 <!-- more -->
+
+Our insight is that most objects in skewed cache workloads will only be accessed once in a short window, so it is critical to evict them early. And the key of S3-FIFO is a small FIFO queue that filters out most objects from entering the main cache. We show that filtering with a small static FIFO queue has a guaranteed eviction time and higher eviction precision compared to state-of-the-art adaptive algorithms.
 
 
 ## Background
