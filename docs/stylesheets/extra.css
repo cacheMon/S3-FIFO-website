@@ -14,3 +14,19 @@
     font-size: 20px !important;
     margin-top: 0.5rem !important;
   }
+
+  .howgood-chart {
+    flex: 80%;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .howgood-chart-style {
+    width: 80%;
+    height: 220%;
+  }
+
+  .onehitwonder-chart-style {
+    width: 90%;
+    height: 200%;
+  }
