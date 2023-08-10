@@ -1,7 +1,7 @@
 # Project information
 site_name: S3-FIFO
 site_description: >-
-  Site description
+  Simple, scalable and efficient caching with S3-FIFO
 
 watch:
   - material
