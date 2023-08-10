@@ -67,19 +67,21 @@
       <p class="h3 text-xs-center spacing"><span class="t-b"
           style="font-family:Sans-serif; color:#FFCC80;">Flash-friendly</span><span style="font-family:arial; color:rgb(73, 69, 69);">: to
           come</span></p>
+      <p class="h3 text-xs-center spacing"><span class="t-b"
+        style="font-family:arial; color:#050505;">* This work has been accepted to SOSP'23</span></p>
       <div class="conteiner-row conteiner-xs">
         <button type="button" title="{{ page.next_page.title | e }}" 
-          onclick="window.open('https://s3fifo.com/blog/2023/08/01/fifo-queues-are-all-you-need-for-cache-eviction/', '_blank')"
+          onclick="window.open('https://blog.s3fifo.com', '_blank')"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Learn More
         </button>
         <button type="button" title="{{ page.next_page.title | e }}"
-        onclick="window.open('https://github.com/cacheMon/py-cachemonCache', '_blank')"
+        onclick="scrollToLearnMoreSection()"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Python Package
         </button>
         <button type="button" title="{{ page.next_page.title | e }}" 
-        onclick="window.open('https://github.com/cacheMon/js-cachemonCache', '_blank')"
+        onclick="scrollToLearnMoreSection()"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Javascript package
         </button>
@@ -108,7 +110,58 @@
   </div>
 </section>
 
-<section class="section-white-body w-100" , id="learnmore">
+<section class="section-white-body w-100" , id="howdoeswork">
+  <div class="text-align-center t-b text-dark h1 mt-5">
+    <p>How does S3-FIFO work?</p>
+  </div>
+
+  <p class="text-align-center t-b text-dark h2 my-1">
+    <span class="h2 italic" style="color: #E65100;">S</span>imple and <span class="h2 italic"style="color: #E65100;">S</span>calable caching with <span
+      class="h2 italic">three</span> <span class="h2 italic" style="color: #E65100;">S</span>tatic <span class="h2 italic">FIFO</span> queues
+  </p>
+
+  <div class="center-container my-2">
+    <img src="assets/images/illustrations/s3fifo_diagram.gif" class="howdoeswork-img my-xs-5 my-sm-5 my-md-5" />
+  </div>
+
+</section>
+
+<section class="section-dark-body w-100" , id="howgood">
+  <div class="text-align-center t-b text-white h1 my-5">
+    <p>How good is S3-FIFO?</p>
+  </div>
+
+  <div class="two-column-container my-3">
+    <div class="howgood-chart d-lg">
+      <!-- cachesize -->
+      <div class="mx-auto w-8/10 overflow-hidden" style="margin-top: 0.5rem;">
+        <canvas id="cachesize-bar-chart" style="width: 80%; height: 220%;"></canvas>
+        <!-- <canvas id="cachesize-bar-chart" class="howgood-chart-style"></canvas> -->
+      </div>
+    </div>
+
+    <div class="howgood-chart d-lg">
+      <!-- throughput -->
+      <div class="mx-auto w-8/10 overflow-hidden" style="margin-top: 0.5rem;">
+        <canvas id="throughput-chart" style="width: 80%; height: 220%;"></canvas>
+        <!-- <canvas id="throughput-chart" class="howgood-chart-style"></canvas> -->
+      </div>
+    </div>
+  </div>
+
+  <p class="text-align-center t-b text-white h2 mt-4">
+    S3-FIFO reduces your LRU cache size by <span style="color: #E65100; font-size: 3rem;">46%</span>
+    and improves the throughput by <span style="color: #E65100; font-size: 3rem;">6x</span>
+  </p>
+  <p class="text-align-center h4 mb-5">*  target miss ratio 10%, 16 threads</p>
+
+</section>
+
+
+
+
+
+<section class="section-white-body w-100" , id="usage">
   <div class="text-align-center t-b text-dark h1 mt-large">
     <p>How to use</p>
   </div>
@@ -166,55 +219,6 @@ console.log(exists); // Outputs: false</code>
 </section>
 
 
-<section class="section-dark-body w-100" , id="howgood">
-  <div class="text-align-center t-b text-white h1 my-5">
-    <p>How good is S3-FIFO?</p>
-  </div>
-
-  <div class="two-column-container my-3">
-    <div class="howgood-chart d-lg">
-      <!-- cachesize -->
-      <div class="mx-auto w-8/10 overflow-hidden" style="margin-top: 0.5rem;">
-        <canvas id="cachesize-bar-chart" style="width: 80%; height: 220%;"></canvas>
-        <!-- <canvas id="cachesize-bar-chart" class="howgood-chart-style"></canvas> -->
-      </div>
-      <p class="text-align-center h4">*  target miss ratio 10%, 16 threads</p>
-    </div>
-
-    <div class="howgood-chart d-lg">
-      <!-- throughput -->
-      <div class="mx-auto w-8/10 overflow-hidden" style="margin-top: 0.5rem;">
-        <canvas id="throughput-chart" style="width: 80%; height: 220%;"></canvas>
-        <!-- <canvas id="throughput-chart" class="howgood-chart-style"></canvas> -->
-      </div>
-    </div>
-  </div>
-
-  <p class="text-align-center t-b text-white h2 mb-5">
-    S3-FIFO reduces your LRU cache size by <span style="color: #E65100; font-size: 3rem;">40%</span>
-    and improves the throughput by <span style="color: #E65100; font-size: 3rem;">6x</span>
-  </p>
-
-</section>
-
-
-
-<section class="section-white-body w-100" , id="howdoeswork">
-  <div class="text-align-center t-b text-dark h1 mt-5">
-    <p>How does S3-FIFO work?</p>
-  </div>
-
-  <p class="text-align-center t-b text-dark h2 my-1">
-    <span class="h2 italic" style="color: #E65100;">S</span>imple and <span class="h2 italic"style="color: #E65100;">S</span>calable caching with <span
-      class="h2 italic">three</span> <span class="h2 italic" style="color: #E65100;">S</span>tatic <span class="h2 italic">FIFO</span> queues
-  </p>
-
-  <div class="center-container my-2">
-    <img src="assets/images/illustrations/s3fifo_diagram.gif" class="howdoeswork-img my-xs-5 my-sm-5 my-md-5" />
-  </div>
-
-</section>
-
 
 <section class="section-dark-body w-100" , id="whydoeswork">
   <div class="text-align-center t-b text-while h1 mt-5">
@@ -258,8 +262,12 @@ console.log(exists); // Outputs: false</code>
   </div>
 
   <div class="text-align-center t-500 text-dark h3 my-3">
-    <p><span class="t-b italic">Sponsors:</span> NSF, Meta, Google, AWS, Microsoft, CMU PDL, Emory Simbiosys, cloudlab</p>
-    <p><span class="t-b italic">Dataset source:</span> Meta, Tencent, Microsoft, Wiki, CloudPhysics</p>
+    <p><span class="t-b italic h2-2">Sponsors:</span><br>
+      <a href="https://csd.cmu.edu/" target="_blank" class="custom-link-text">Carnegie Mellon University</a> <a href="https://www.pdl.cmu.edu/index.shtml" target="_blank" class="custom-link-text">Parallel Data Laboratory</a>
+      <a href="https://www.cs.emory.edu/home/" target="_blank" class="custom-link-text">Emory University</a> <a href="https://simbiosys.mathcs.emory.edu/home" target="_blank" class="custom-link-text">SimBioSys Lab</a><br>
+      Meta, Google, AWS, Microsoft, CloudLab, NSF</p><br>
+    <p><span class="t-b italic h2-2">Dataset source:</span><br> 
+      Meta, Tencent, Microsoft, Wikimedia, CloudPhysics</p>
   </div>
 
 </section>
@@ -381,9 +389,9 @@ console.log(exists); // Outputs: false</code>
   // Chart.register(Log2Axis);
 
 
-  function scrollToSecondSection() {
-    const secondSection = document.getElementById('learnmore');
-    secondSection.scrollIntoView({ behavior: 'smooth' });
+  function scrollToLearnMoreSection() {
+    const usageSection = document.getElementById('usage');
+    usageSection.scrollIntoView({ behavior: 'smooth' });
   }
 
   function getFontSize() {
