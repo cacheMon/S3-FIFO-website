@@ -1,5 +1,5 @@
 # Project information
-site_name: S3-FIFO
+site_name: "S3-FIFO: Simple, scalable and efficient caching"
 site_description: >-
   Simple, scalable and efficient caching with S3-FIFO
 
