@@ -76,12 +76,17 @@
           Learn More
         </button>
         <button type="button" title="{{ page.next_page.title | e }}" 
+          onclick="window.open('https://dl.acm.org/doi/10.1145/3600006.3613147', '_blank')"
+          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
+          Paper
+        </button>
+        <button type="button" title="{{ page.next_page.title | e }}" 
           onclick="window.open('https://youtu.be/5T2dHj0eHC0', '_blank')"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Watch Video
         </button>
         <button type="button" title="{{ page.next_page.title | e }}" 
-          onclick="window.open('https://jasony.me/publication/sosp23-s3fifo.pdf', '_blank')"
+          onclick="window.open('https://jasony.me/slides/sosp23-s3fifo.pdf', '_blank')"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Slides
         </button>
