@@ -219,13 +219,12 @@ console.log(exists); // Outputs: false</code>
 
 
 <section class="section-dark-body w-100" , id="whydoeswork">
-  <div class="text-align-center t-b text-while h1 mt-5">
+  <div class="text-align-center t-b text-white h1 mt-5">
     <p>Why does S3-FIFO work?</p>
   </div>
 
   <p class="text-align-center t-b text-white h2-2 my-2">
-    A huge number of objects accessed once (called one-hit wonders)
-    calling for precise
+    A huge number of objects accessed once (called one-hit wonders) calling for
     <a href="https://s3fifo.com/blog/2023/06/01/fifo-is-better-than-lru-the-power-of-lazy-promotion-and-quick-demotion/" target="_blank" class="custom-link">quick demotion</a>:<br>
     S3-FIFO <span class="h2-2 italic">quickly</span> removes objects that will not be accessed in the future
   </p>
@@ -237,6 +236,7 @@ console.log(exists); // Outputs: false</code>
         <canvas id="onehitwonder-bar-chart" style="width: 90%; height: 200%;"></canvas>
         <!-- <canvas id="onehitwonder-bar-chart" class="onehitwonder-chart-style"></canvas> -->
       </div>
+      <p class="text-align-center t-b text-white h3">Figure shows that most of the objects evicted by LRU spend long time in the cache without reuse. </p>
     </div>
   </div>
 
