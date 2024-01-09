@@ -1,0 +1,32 @@
+/* :root {
+    --md-primary-fg-color:        #6587b4;
+    --md-primary-fg-color--light: #b5ccea;
+    --md-primary-fg-color--dark:  #566f8f;
+  } */
+
+  :root {
+    --md-primary-fg-color:        #222323;
+    --md-primary-fg-color--light: #222323;
+    --md-primary-fg-color--dark:  #222323;
+  }
+
+  .md-tabs__link{
+    font-size: 20px !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .howgood-chart {
+    flex: 80%;
+    display: flex;
+    flex-flow: column;
+  }
+
+  /* .howgood-chart-style {
+    width: 80% !important;
+    height: 220%!important;
+  }
+
+  .onehitwonder-chart-style {
+    width: 90%!important;
+    height: 200%!important;
+  } */
