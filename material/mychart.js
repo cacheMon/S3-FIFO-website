@@ -1,8 +1,8 @@
 
-// function scrollToLearnMoreSection() {
-//   const usageSection = document.getElementById('usage');
-//   usageSection.scrollIntoView({ behavior: 'smooth' });
-// }
+function scrollToLearnMoreSection() {
+  const usageSection = document.getElementById('usage');
+  usageSection.scrollIntoView({ behavior: 'smooth' });
+}
 
 // function getFontSize() {
 //   const width = window.innerWidth;
