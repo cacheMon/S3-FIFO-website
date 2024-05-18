@@ -31,13 +31,12 @@
   }
 
   code[class="language-python"] {
-        font-size: 0.75rem;
+    font-size: 0.75rem;
   }
 
   code[class="language-javascript"] {
-        font-size: 0.75rem;
+    font-size: 0.75rem;
   }
-  
 </style>
 
 
@@ -47,52 +46,57 @@
     <div class="px-3 ctx-header-text conteiner">
       <div class="conteiner-row">
         <p class="h1 text-xs-center t-b">
-          <span style= "color:rgb(0, 0, 0);">S3-FIFO</span>
+          <span style="color:rgb(0, 0, 0);">S3-FIFO</span>
         </p>
       </div>
-      <p class="h2 text-xs-center spacing t-b" style="font-family:Sans-serif;"><b>Scalable</b> and <b>Efficient</b> Cache Eviction</p>
+      <p class="h2 text-xs-center spacing t-b" style="font-family:Sans-serif;"><b>Scalable</b> and <b>Efficient</b>
+        Cache Eviction</p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Sans-serif; color:#E65100;">Efficient</span><span style="font-family:arial; color:rgb(73, 69, 69);">: up to 72% lower
+          style="font-family:Sans-serif; color:#E65100;">Efficient</span><span
+          style="font-family:arial; color:rgb(73, 69, 69);">: up to 72% lower
           miss ratio than LRU </span></p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Sans-serif; color:#EF6C00;">Robust</span><span style="font-family:arial; color:rgb(73, 69, 69);">: evaluated on
+          style="font-family:Sans-serif; color:#EF6C00;">Robust</span><span
+          style="font-family:arial; color:rgb(73, 69, 69);">: evaluated on
           <b>6594</b> workloads from 12 companies</span></p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Sans-serif; color:#FB8C00;">Scalable</span><span style="font-family:arial; color:rgb(73, 69, 69);">: <b>NO</b>
+          style="font-family:Sans-serif; color:#FB8C00;">Scalable</span><span
+          style="font-family:arial; color:rgb(73, 69, 69);">: <b>NO</b>
           locking</span></p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Sans-serif; color:#FFA726;">Simple</span><span style="font-family:arial; color:rgb(73, 69, 69);">: FIFO
+          style="font-family:Sans-serif; color:#FFA726;">Simple</span><span
+          style="font-family:arial; color:rgb(73, 69, 69);">: FIFO
           queues only </span></p>
       <p class="h3 text-xs-center spacing"><span class="t-b"
-          style="font-family:Sans-serif; color:#FFCC80;">Flash-friendly</span><span style="font-family:arial; color:rgb(73, 69, 69);">: sequential writes only </span></p>
-      <p class="h3 text-xs-center spacing"><span class="t-b"
-        style="font-family:arial; color:#050505;">* appear in SOSP'23</span></p>
+          style="font-family:Sans-serif; color:#FFCC80;">Flash-friendly</span><span
+          style="font-family:arial; color:rgb(73, 69, 69);">: sequential writes only </span></p>
+      <p class="h3 text-xs-center spacing"><span class="t-b" style="font-family:arial; color:#050505;">* appear in
+          SOSP'23</span></p>
       <div class="conteiner-row conteiner-xs">
-        <button type="button" title="{{ page.next_page.title | e }}" 
+        <button type="button" title="{{ page.next_page.title | e }}"
           onclick="window.open('https://blog.s3fifo.com', '_blank')"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Learn More
         </button>
-        <button type="button" title="{{ page.next_page.title | e }}" 
+        <button type="button" title="{{ page.next_page.title | e }}"
           onclick="window.open('https://dl.acm.org/doi/10.1145/3600006.3613147', '_blank')"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Paper
         </button>
-        <button type="button" title="{{ page.next_page.title | e }}" 
+        <button type="button" title="{{ page.next_page.title | e }}"
           onclick="window.open('https://youtu.be/5T2dHj0eHC0', '_blank')"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Watch Video
         </button>
-        <button type="button" title="{{ page.next_page.title | e }}" 
+        <button type="button" title="{{ page.next_page.title | e }}"
           onclick="window.open('https://jasony.me/slides/sosp23-s3fifo.pdf', '_blank')"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Slides
         </button>
-        <button type="button" title="{{ page.next_page.title | e }}"
-        onclick="scrollToLearnMoreSection()"
+        <!-- <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToLearnMoreSection()"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Python Package
-        </button>
+        </button> -->
         <!-- <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           More to come soon
@@ -114,8 +118,9 @@
   </div>
 
   <p class="text-align-center t-b text-dark h2 my-1">
-    <span class="h2 italic" style="color: #E65100;">S</span>imple and <span class="h2 italic"style="color: #E65100;">S</span>calable caching with <span
-      class="h2 italic">three</span> <span class="h2 italic" style="color: #E65100;">S</span>tatic <span class="h2 italic">FIFO</span> queues
+    <span class="h2 italic" style="color: #E65100;">S</span>imple and <span class="h2 italic"
+      style="color: #E65100;">S</span>calable caching with <span class="h2 italic">three</span> <span class="h2 italic"
+      style="color: #E65100;">S</span>tatic <span class="h2 italic">FIFO</span> queues
   </p>
 
   <div class="center-container my-2">
@@ -151,7 +156,7 @@
     S3-FIFO reduces your LRU cache size by <span style="color: #E65100; font-size: 3rem;">46%</span>
     and improves the throughput by <span style="color: #E65100; font-size: 3rem;">6x</span>
   </p>
-  <p class="text-align-center h4 mb-5">*  target miss ratio 10%, 16 threads</p>
+  <p class="text-align-center h4 mb-5">* target miss ratio 10%, 16 threads</p>
 
 </section>
 
@@ -225,7 +230,8 @@ console.log(exists); // Outputs: false</code>
 
   <p class="text-align-center t-b text-white h2-2 my-2">
     A huge number of objects accessed once (called one-hit wonders) calling for
-    <a href="https://s3fifo.com/blog/2023/06/01/fifo-is-better-than-lru-the-power-of-lazy-promotion-and-quick-demotion/" target="_blank" class="custom-link">quick demotion</a>:<br>
+    <a href="https://s3fifo.com/blog/2023/06/01/fifo-is-better-than-lru-the-power-of-lazy-promotion-and-quick-demotion/"
+      target="_blank" class="custom-link">quick demotion</a>:<br>
     S3-FIFO <span class="h2-2 italic">quickly</span> removes objects that will not be accessed in the future
   </p>
 
@@ -236,7 +242,8 @@ console.log(exists); // Outputs: false</code>
         <canvas id="onehitwonder-bar-chart" style="width: 90%; height: 200%;"></canvas>
         <!-- <canvas id="onehitwonder-bar-chart" class="onehitwonder-chart-style"></canvas> -->
       </div>
-      <p class="text-align-center t-b text-white h3">Figure shows that most of the objects evicted by LRU spend long time in the cache without reuse. </p>
+      <p class="text-align-center t-b text-white h3">Figure shows that most of the objects evicted by LRU spend long
+        time in the cache without reuse. </p>
     </div>
   </div>
 
@@ -249,54 +256,89 @@ console.log(exists); // Outputs: false</code>
   </div>
 
   <div class="text-align-center text-dark h3 my-3">
-    <p>Google, VMware, 
-      <a target="_blank" class="custom-link-text" href="https://github.com/redpanda-data/redpanda/pull/14759">Redpanda</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/cloudflare/pingora/tree/main/tinyufo">Cloudfalre</a>,
-      and <a target="_blank" class="custom-link-text" href="https://github.com/matrixorigin/matrixone/blob/c582b7d3ce8f7c177f2bd268a37375ae1a5b18bd/pkg/fileservice/fifocache/fifo.go#L24">MatrixOne</a>
+    <p>Google, VMware,
+      <a target="_blank" class="custom-link-text"
+        href="https://github.com/redpanda-data/redpanda/pull/14759">Redpanda</a>,
+      <a target="_blank" class="custom-link-text"
+        href="https://github.com/cloudflare/pingora/tree/main/tinyufo">Cloudflare</a>,
+      <a target="_blank" class="custom-link-text"
+        href="https://github.com/risingwavelabs/risingwave/pull/16208">Risingwave</a>,
+      <a target="_blank" class="custom-link-text"
+        href="https://github.com/matrixorigin/matrixone/blob/c582b7d3ce8f7c177f2bd268a37375ae1a5b18bd/pkg/fileservice/fifocache/fifo.go#L24">MatrixOne</a>, 
+      and <a target="_blank" class="custom-link-text"
+        href="https://github.com/ua-parser/uap-python/pull/197/commits/9b24838f3a3b57873eee0459ca161d5d8b6ddf16">uap-python</a>,
     </p>
     <!-- other libraries -->
     <!-- https://github.com/shenghansen/EdgeKV/blob/master/src/edge/S3FIFO.cpp -->
 
-    <p> mulitple popular open-source libraries, including
+    <p> mulitple open-source libraries, such as
       <a target="_blank" class="custom-link-text" href="https://github.com/maypok86/otter">otter (Golang)</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/surrealdb/surrealkv/blob/main/src/storage/cache/s3fifo.rs">surrealkv (Rust)</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/arthurprs/quick-cache">quick-cache (Rust)</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/falsandtru/spica/blob/master/src/s3-fifo.ts">spica (Javascript)</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/ua-parser/uap-python/pull/197/commits/9b24838f3a3b57873eee0459ca161d5d8b6ddf16">uap-python</a>,
-    <br>
-    and several other libraries in 
-    <a target="_blank" class="custom-link-text" href="https://github.com/scalalang2/golang-fifo">Golang</a>,
-    <a target="_blank" class="custom-link-text" href="https://github.com/cmcaine/s3fifo.py">Python</a>,
-    Rust <a target="_blank" class="custom-link-text" href="https://github.com/totoroyyb/S3-FIFO">[1]</a>,
-    <a target="_blank" class="custom-link-text" href="https://github.com/wfraser/s3fifo">[2]</a>,
-    <a target="_blank" class="custom-link-text" href="https://github.com/willb0/s3-fifo-rs">[3]</a>,
-    <a target="_blank" class="custom-link-text" href="https://github.com/qsib-cbie/s3-fifo">[4]</a>,
-    C++ <a target="_blank" class="custom-link-text" href="https://github.com/thelamon/s3fifo_cpp">[1]</a>,
-    <a target="_blank" class="custom-link-text" href="https://github.com/Ilistratov/S3-FIFO">[2]</a>, 
-    Java <a target="_blank" class="custom-link-text" href="https://github.com/malets12/s3fifo">[1]</a>,
-    Zig <a target="_blank" class="custom-link-text" href="https://github.com/Jeevananthan-23/ziglang-caches">[1]</a>,
-    Javascript <a target="_blank" class="custom-link-text" href="https://github.com/Tom910/s3-fifo-cache">[1]</a>.
-  </p>
-  <p>
-    Discussed in <a target="_blank" class="custom-link-text" href="https://charap.co/winter-2023-2024-reading-group-papers/">Aleksey's Online Reading Group</a>, 
-    <a target="_blank" class="custom-link-text" href="https://docs.google.com/document/d/1XX5ksgLVnkPE-dfeVDZPlv5NMbgxJqWmi13YEQt1t1o/edit#heading=h.k6znr7t8urvp"> UIUC CS525</a>.
+      <a target="_blank" class="custom-link-text"
+        href="https://github.com/surrealdb/surrealkv/blob/main/src/storage/cache/s3fifo.rs">surrealkv (Rust)</a>,
+      <a target="_blank" class="custom-link-text" href="https://github.com/arthurprs/quick-cache">quick-cache
+        (Rust)</a>,
+      <a target="_blank" class="custom-link-text"
+        href="https://github.com/falsandtru/spica/blob/master/src/s3-fifo.ts">spica (Javascript)</a>,
+      <a target="_blank" class="custom-link-text"
+        href="https://github.com/MrCroxx/foyer/pull/303">foyer (Rust)</a>,
+      <br>
+      and many other libraries in
+      Golang 
+      <a target="_blank" class="custom-link-text" href="https://github.com/scalalang2/golang-fifo">[1]</a>,
+      <a target="_blank" class="custom-link-text" href="https://github.com/Disdjj/go-s3-fifo">[2]</a>,
+      
+      Python <a target="_blank" class="custom-link-text" href="https://github.com/cmcaine/s3fifo.py">[1]</a>,
+      <!-- Python <a target="_blank" class="custom-link-text" href="https://github.com/66RING/the-chaos">[1]</a>, -->
+      
+      Rust <a target="_blank" class="custom-link-text" href="https://github.com/totoroyyb/S3-FIFO">[1]</a>,
+      <a target="_blank" class="custom-link-text" href="https://github.com/wfraser/s3fifo">[2]</a>,
+      <a target="_blank" class="custom-link-text" href="https://github.com/willb0/s3-fifo-rs">[3]</a>,
+      <a target="_blank" class="custom-link-text" href="https://github.com/qsib-cbie/s3-fifo">[4]</a>,
+      
+      C++ <a target="_blank" class="custom-link-text" href="https://github.com/thelamon/s3fifo_cpp">[1]</a>,
+      <a target="_blank" class="custom-link-text" href="https://github.com/Ilistratov/S3-FIFO">[2]</a>,
+      
+      Java <a target="_blank" class="custom-link-text" href="https://github.com/malets12/s3fifo">[1]</a>,
+      <a target="_blank" class="custom-link-text" href="https://github.com/Saalik/S3FCache">[2]</a>,
+      
+      Zig <a target="_blank" class="custom-link-text" href="https://github.com/Jeevananthan-23/ziglang-caches">[1]</a>,
+
+      Javascript <a target="_blank" class="custom-link-text" href="https://github.com/Tom910/s3-fifo-cache">[1]</a>.
     </p>
     <p>
-    Covered in blog 
-    <a target="_blank" class="custom-link-text" href="https://www.polyscale.ai/blog/one-hit-expectation/">[1]</a>,
-    <a target="_blank" class="custom-link-text" href="https://amarchenko.dev/blog/2023-10-12-memory-cache/">[2]</a>, 
-    <a target="_blank" class="custom-link-text" href="https://sidhion.com/blog/posts/function-image-eviction/">[3]</a>, 
-    <a target="_blank" class="custom-link-text" href="https://medium.com/rate-labs/%EC%96%B4%EB%96%A4-%EC%86%8C%EA%B0%80-%EC%9D%BC%EC%9D%84-%EB%8D%94-%EC%9E%98%ED%95%A9%EB%8B%88%EA%B9%8C-fifo%EA%B0%80-lru%EB%B3%B4%EB%8B%A4-%EB%82%AB%EC%8A%B5%EB%8B%88%EB%8B%A4%EC%9A%94-1a49b9060ce4">[4]</a> in Korean, 
-    <a target="_blank" class="custom-link-text" href="https://tiisys.com/blog/2023/12/06/post-130211/2/">[5]</a> in Japanese, 
-    <a target="_blank" class="custom-link-text" href="https://habr.com/ru/companies/ruvds/articles/759270/">[6]</a> in Russian,
+      Discussed in <a target="_blank" class="custom-link-text"
+        href="https://charap.co/winter-2023-2024-reading-group-papers/">Aleksey's Online Reading Group</a>,
+      <a target="_blank" class="custom-link-text"
+        href="https://docs.google.com/document/d/1XX5ksgLVnkPE-dfeVDZPlv5NMbgxJqWmi13YEQt1t1o/edit#heading=h.k6znr7t8urvp">
+        UIUC CS525</a>.
+    </p>
+    <p>
+      Covered in blog
+      <a target="_blank" class="custom-link-text" href="https://www.polyscale.ai/blog/one-hit-expectation/">[1]</a>,
+      <a target="_blank" class="custom-link-text" href="https://amarchenko.dev/blog/2023-10-12-memory-cache/">[2]</a>,
+      <a target="_blank" class="custom-link-text"
+        href="https://sidhion.com/blog/posts/function-image-eviction/">[3]</a>,
+      <a target="_blank" class="custom-link-text"
+        href="https://medium.com/rate-labs/%EC%96%B4%EB%96%A4-%EC%86%8C%EA%B0%80-%EC%9D%BC%EC%9D%84-%EB%8D%94-%EC%9E%98%ED%95%A9%EB%8B%88%EA%B9%8C-fifo%EA%B0%80-lru%EB%B3%B4%EB%8B%A4-%EB%82%AB%EC%8A%B5%EB%8B%88%EB%8B%A4%EC%9A%94-1a49b9060ce4">[4]</a>
+      in Korean,
+      <a target="_blank" class="custom-link-text" href="https://tiisys.com/blog/2023/12/06/post-130211/2/">[5]</a> in
+      Japanese,
+      <a target="_blank" class="custom-link-text" href="https://habr.com/ru/companies/ruvds/articles/759270/">[6]</a> in
+      Russian,
 
-    newsletters <a target="_blank" class="custom-link-text" href="https://www.pointer.io/archives/0a85ffc4cd/">[1]</a>, 
-    <a target="_blank" class="custom-link-text" href="https://leahneukirchen.org/trivium/2023-09">[2]</a>, 
-    conference <a target="_blank" class="custom-link-text" href="https://bbconf.kr/archive/">in Korea</a>, <a target="_blank" class="custom-link-text" href="https://ftp.yuni.dev/bbconf/2023-winter/LDH_SIEVE_S3_FIFO_Cache_%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_%EC%86%8C%EA%B0%9C.pdf">[2]</a>
+      newsletters 
+      <a target="_blank" class="custom-link-text"
+        href="https://www.pointer.io/archives/0a85ffc4cd/">[1]</a>,
+      <!-- <a target="_blank" class="custom-link-text"
+        href="https://newsletter.programmingdigest.net/p/design-philosophy-great-tables">[2]</a>, -->
+      <a target="_blank" class="custom-link-text" href="https://leahneukirchen.org/trivium/2023-09">[2]</a>,
+      conference <a target="_blank" class="custom-link-text" href="https://bbconf.kr/archive/">in Korea</a>, <a
+        target="_blank" class="custom-link-text"
+        href="https://ftp.yuni.dev/bbconf/2023-winter/LDH_SIEVE_S3_FIFO_Cache_%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_%EC%86%8C%EA%B0%9C.pdf">[2]</a>
 
-  </p>
+    </p>
 
-  <p> let us know if you would like to be featured here.</p>
+    <p> let us know if you would like to be featured here.</p>
   </div>
 
 </section>
@@ -308,10 +350,13 @@ console.log(exists); // Outputs: false</code>
 
   <div class="text-align-center t-500 text-dark h3 my-3">
     <p><span class="t-b italic h2-2">Sponsors:</span><br>
-      <a href="https://csd.cmu.edu/" target="_blank" class="custom-link-text">Carnegie Mellon University</a> <a href="https://www.pdl.cmu.edu/index.shtml" target="_blank" class="custom-link-text">Parallel Data Laboratory</a>
-      <a href="https://www.cs.emory.edu/home/" target="_blank" class="custom-link-text">Emory University</a> <a href="https://simbiosys.mathcs.emory.edu/home" target="_blank" class="custom-link-text">SimBioSys Lab</a><br>
-      Meta, Google, AWS, Microsoft, CloudLab, NSF</p><br>
-    <p><span class="t-b italic h2-2">Dataset source:</span><br> 
+      <a href="https://csd.cmu.edu/" target="_blank" class="custom-link-text">Carnegie Mellon University</a> <a
+        href="https://www.pdl.cmu.edu/index.shtml" target="_blank" class="custom-link-text">Parallel Data Laboratory</a>
+      <a href="https://www.cs.emory.edu/home/" target="_blank" class="custom-link-text">Emory University</a> <a
+        href="https://simbiosys.mathcs.emory.edu/home" target="_blank" class="custom-link-text">SimBioSys Lab</a><br>
+      Meta, Google, AWS, Microsoft, CloudLab, NSF
+    </p><br>
+    <p><span class="t-b italic h2-2">Dataset source:</span><br>
       Meta, Tencent, Microsoft, Wikimedia, CloudPhysics</p>
   </div>
 
@@ -326,7 +371,8 @@ console.log(exists); // Outputs: false</code>
   <div class="text-align-center t-500 text-dark h3 mt-3 mb-5">
     <a href="mailto:cachemon.org@gmail.com" target="_blank" class="custom-link">
       <i class="fa-solid fa-envelope fa-2x"></i></a>
-    <a href="https://join.slack.com/t/cachemon/shared_invite/zt-20pjil08z-f9d1Ui~p1gfBnsedHP9x8Q" target="_blank" class="custom-link">
+    <a href="https://join.slack.com/t/cachemon/shared_invite/zt-20pjil08z-f9d1Ui~p1gfBnsedHP9x8Q" target="_blank"
+      class="custom-link">
       <i class="fa-brands fa-slack fa-2x"></i></a>
     <a href="https://twitter.com/cachemon_org" target="_blank" class="custom-link">
       <i class="fa-brands fa-twitter fa-2x"></i></a>
@@ -339,10 +385,11 @@ console.log(exists); // Outputs: false</code>
 
 <footer>
   <!-- this needs to go after body because the canvas not ready until now -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.js" integrity="sha512-opXrgVcTHsEVdBUZqTPlW9S8+99hNbaHmXtAdXXc61OUU6gOII5ku/PzZFqexHXc3hnK8IrJKHo+T7O4GRIJcw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.js"
+    integrity="sha512-opXrgVcTHsEVdBUZqTPlW9S8+99hNbaHmXtAdXXc61OUU6gOII5ku/PzZFqexHXc3hnK8IrJKHo+T7O4GRIJcw=="
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="/mychart.js"></script>
 </footer>
 
 
 {% endblock %}
-
