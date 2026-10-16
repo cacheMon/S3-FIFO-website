@@ -37,11 +37,146 @@
   code[class="language-javascript"] {
     font-size: 0.75rem;
   }
+
+  /* Hero buttons are links now, so they keep their button look */
+  a.btn-dark, a.btn-dark:hover {
+    text-decoration: none;
+  }
+
+  .award {
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .25rem .75rem;
+    border: 1px solid rgba(230, 81, 0, .45);
+    border-radius: 999px;
+    color: #b54000;
+    font-size: .7rem;
+    letter-spacing: .06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  /* How it works, in words */
+  .steps {
+    max-width: 46rem;
+    margin: 1rem auto 3rem;
+    padding: 0 1.5rem;
+    color: #333;
+    font-size: .85rem;
+    line-height: 1.6;
+  }
+  .steps li { margin-bottom: .5rem; }
+
+  /* How to use: verified Python example beside libraries by language */
+  .usage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 64rem;
+    margin: 1.5rem auto 3rem;
+    padding: 0 1.25rem;
+  }
+  .usage pre { flex: 1 1 26rem; max-width: 34rem; margin: 0; box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); }
+  .usage .libs { flex: 1 1 20rem; max-width: 28rem; }
+  .usage h3 {
+    margin: 0 0 .5rem;
+    color: #222;
+    font-size: .95rem;
+  }
+  .usage .libs p { margin: 0 0 1rem; color: #555; font-size: .8rem; }
+
+  /* Adoption: one wrapped row of chips per group */
+  .adopt {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 1rem;
+  }
+  .adopt-group { margin-top: 1.75rem; }
+  .adopt-group h3 {
+    margin: 0 0 .75rem;
+    color: #6b6460;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .adopt-group h3 span {
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .chips li { margin: 0; }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .3rem .7rem .3rem .35rem;
+    border: 1px solid #e6dfd8;
+    border-radius: 999px;
+    background: #fff;
+    color: #222 !important;
+    font-size: .72rem;
+    line-height: 1.3;
+    text-decoration: none;
+    transition: border-color .15s, color .15s;
+  }
+  a.chip:hover { border-color: #E65100; color: #b54000 !important; }
+  .chip:focus-visible { outline: 2px solid #E65100; outline-offset: 2px; }
+  .chip img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    flex: none;
+    background: #f3efea;
+    object-fit: cover;
+  }
+  .chip .tag { color: #8a817a; font-size: .64rem; }
+  .chip--text { padding-left: .7rem; }
+  /* Adopters with no public source to link: dashed, and not a link */
+  .chip--private { padding-left: .7rem; border-style: dashed; color: #666 !important; }
+  .adopt-note {
+    margin: 2rem 0 0;
+    color: #555;
+    font-size: .8rem;
+    text-align: center;
+  }
+  .adopt-note a, .more-links a { color: #c44800; }
+  .more-links {
+    margin-top: 1rem;
+    color: #555;
+    font-size: .8rem;
+  }
+
+  /* Below 960px the theme hides the charts; show them, sized to the screen */
+  @media (max-width: 959px) {
+    .ctx-header-img.d-lg, .howgood-chart.d-lg { display: flex; }
+    .ctx-header-img.d-lg > div, .howgood-chart.d-lg > div { margin-top: 2rem !important; width: 100%; }
+    .two-column-container { flex-direction: column; align-items: stretch; padding: 0 1rem; }
+    .hero > .conteiner-row { flex-direction: column; }
+    /* in a column, the theme's flex: 60% would cap the chart's height */
+    .hero .ctx-header-img { flex: none; width: 100%; padding: 0 1rem; }
+  }
+
+  /* Phones: headings sized to the screen */
+  @media (max-width: 539px) {
+    .h1 { font-size: 2.1rem; }
+    .h1-2 { font-size: 2rem; }
+    .howdoeswork-img { width: 100%; }
+  }
 </style>
 
 
-<!--documetation-->
-<section class="section-white-body w-100">
+<section class="section-white-body w-100 hero">
   <div class="md-grid conteiner-row pt-1 pt-lg-5 my-4">
     <div class="px-3 ctx-header-text conteiner">
       <div class="conteiner-row">
@@ -70,49 +205,38 @@
       <p class="h3 text-xs-center spacing"><span class="t-b"
           style="font-family:Sans-serif; color:#FFCC80;">Flash-friendly</span><span
           style="font-family:arial; color:rgb(73, 69, 69);">: sequential writes only </span></p>
-      <p class="h3 text-xs-center spacing"><span class="t-b" style="font-family:arial; color:#050505;">* appear in
-          SOSP'23</span></p>
+      <p class="text-xs-center"><a class="award" href="https://dl.acm.org/doi/10.1145/3600006.3613147"
+          target="_blank" rel="noopener">Published at SOSP &rsquo;23</a></p>
       <div class="conteiner-row conteiner-xs">
-        <button type="button" title="{{ page.next_page.title | e }}"
-          onclick="window.open('https://blog.s3fifo.com', '_blank')"
+        <a href="blog/2023/08/01/fifo-queues-are-all-you-need-for-cache-eviction/"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Learn More
-        </button>
-        <button type="button" title="{{ page.next_page.title | e }}"
-          onclick="window.open('https://dl.acm.org/doi/10.1145/3600006.3613147', '_blank')"
+        </a>
+        <a href="https://dl.acm.org/doi/10.1145/3600006.3613147" target="_blank" rel="noopener"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Paper
-        </button>
-        <button type="button" title="{{ page.next_page.title | e }}"
-          onclick="window.open('https://youtu.be/5T2dHj0eHC0', '_blank')"
+        </a>
+        <a href="https://youtu.be/5T2dHj0eHC0" target="_blank" rel="noopener"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Watch Video
-        </button>
-        <button type="button" title="{{ page.next_page.title | e }}"
-          onclick="window.open('https://jasony.me/slides/sosp23-s3fifo.pdf', '_blank')"
+        </a>
+        <a href="https://jasony.me/slides/sosp23-s3fifo.pdf" target="_blank" rel="noopener"
           class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           Slides
-        </button>
-        <!-- <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToLearnMoreSection()"
-          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
-          Python Package
-        </button> -->
-        <!-- <button type="button" title="{{ page.next_page.title | e }}" onclick="scrollToSecondSection()"
-          class="btn-dark btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
-          More to come soon
-        </button> -->
+        </a>
       </div>
     </div>
     <div class="ctx-header-img d-lg">
       <!-- barchar -->
       <div class="mx-auto w-9/10 overflow-hidden" style="margin-top: 6rem;">
-        <canvas id="bar-chart" style="width: 140%; height: 400%;"></canvas>
+        <canvas id="bar-chart" style="width: 140%; height: 400%;"
+          aria-label="Mean miss ratio of FIFO, LRU, TinyLFU and S3-FIFO on Meta, Twitter, Wikimedia, Tencent and CDN traces" role="img"></canvas>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section-white-body w-100" , id="howdoeswork">
+<section class="section-white-body w-100" id="howdoeswork">
   <div class="text-align-center t-b text-dark h1 mt-5">
     <p>How does S3-FIFO work?</p>
   </div>
@@ -124,12 +248,21 @@
   </p>
 
   <div class="center-container my-2">
-    <img src="assets/images/illustrations/s3fifo_diagram.gif" class="howdoeswork-img my-xs-5 my-sm-5 my-md-5" />
+    <img src="assets/images/illustrations/s3fifo_diagram.gif" class="howdoeswork-img my-xs-5 my-sm-5 my-md-5"
+      alt="Animation of S3-FIFO: requests enter a small FIFO queue; objects requested again move to the main queue, the rest are evicted and remembered in a ghost queue." />
   </div>
+  <ol class="steps">
+    <li><b>New objects</b> enter a small FIFO queue that holds about 10% of the cache.</li>
+    <li><b>When the small queue is full,</b> its oldest object moves to the main queue if it was requested again;
+      otherwise it is evicted, and only its key is kept in a ghost queue.</li>
+    <li><b>A miss on a key in the ghost queue</b> inserts the object straight into the main queue.</li>
+    <li><b>The main queue</b> evicts from its tail but gives objects that were reused another pass. A hit only
+      bumps a small counter, so nothing is locked or moved on the hot path.</li>
+  </ol>
 
 </section>
 
-<section class="section-dark-body w-100" , id="howgood">
+<section class="section-dark-body w-100" id="howgood">
   <div class="text-align-center t-b text-white h1 my-5">
     <p>How good is S3-FIFO?</p>
   </div>
@@ -138,16 +271,16 @@
     <div class="howgood-chart d-lg">
       <!-- cachesize -->
       <div class="mx-auto w-8/10 overflow-hidden" style="margin-top: 0.5rem;">
-        <canvas id="cachesize-bar-chart" style="width: 80%; height: 220%;"></canvas>
-        <!-- <canvas id="cachesize-bar-chart" class="howgood-chart-style"></canvas> -->
+        <canvas id="cachesize-bar-chart" style="width: 80%; height: 220%;"
+          aria-label="Cache size S3-FIFO needs relative to LRU on seven datasets" role="img"></canvas>
       </div>
     </div>
 
     <div class="howgood-chart d-lg">
       <!-- throughput -->
       <div class="mx-auto w-8/10 overflow-hidden" style="margin-top: 0.5rem;">
-        <canvas id="throughput-chart" style="width: 80%; height: 220%;"></canvas>
-        <!-- <canvas id="throughput-chart" class="howgood-chart-style"></canvas> -->
+        <canvas id="throughput-chart" style="width: 80%; height: 220%;"
+          aria-label="Throughput of LRU and S3-FIFO from 1 to 16 threads" role="img"></canvas>
       </div>
     </div>
   </div>
@@ -160,78 +293,69 @@
 
 </section>
 
+{#- One chip per entry. Adopters link to the code, merged PR or docs that show
+    S3-FIFO in use, the same evidence the cacheMon homepage cites. -#}
+{%- macro chip(name, href, img=None, tag=None) -%}
+<li><a class="chip{% if not img %} chip--text{% endif %}" href="{{ href }}" target="_blank" rel="noopener">
+  {%- if img %}<img src="{{ img }}" alt="" loading="lazy">{% endif -%}
+  {{ name }}{% if tag %} <span class="tag">{{ tag }}</span>{% endif %}</a></li>
+{%- endmacro %}
+{%- macro private(name) -%}
+<li><span class="chip chip--private" title="Reported to us; no public source to link">{{ name }}</span></li>
+{%- endmacro %}
 
-
-
-
-<section class="section-white-body w-100" , id="usage">
+<section class="section-white-body w-100" id="usage">
   <div class="text-align-center t-b text-dark h1 mt-large">
     <p>How to use</p>
   </div>
-  <div class="two-column-container my-4">
-    <pre data-dependencies="python" class="language-python" tabindex="0"
-      style="box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); margin-right: 2rem;">
-<code class="language-python line-numbers">
+  <div class="usage">
+    <pre data-dependencies="python" class="language-python" tabindex="0"><code class="language-python line-numbers"># pip install cachemonCache
 from cachemonCache import S3FIFO
 
-# Create a cache backed by DRAM
-cache = S3FIFO(size=10) # or cache=LRU(size=10)         
+# A cache that holds up to 1,000 objects
+cache = S3FIFO(cache_size=1000)
 
-# Add an object to the cache
-cache.put("key", "value", ttl=10)
+# Add an object; it expires after 60 seconds
+cache.put("key", "value", ttl_sec=60)
 
-# Get an object from the cache
-cache.get("key")
-print(value) # Outputs: "value" or None
+# Look it up
+print(cache.get("key"))   # value
+print("key" in cache)     # True
 
-# Remove an object from the cache
+# Remove it
 cache.delete("key")
+print(cache.get("key"))   # None
 
-# Check if an object is in the cache
-cache.has("key")
-print(exists)  # Outputs: False</code>
-    </pre>
+# It also behaves like a dict
+cache["answer"] = 42
+print(cache["answer"])    # 42</code></pre>
 
-    <pre data-dependencies="python" class="language-python" tabindex="0"
-      style="box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); margin-left: 2rem;">
-<code class="language-javascript line-numbers">
-const { S3FIFO } = require('cachemonCache');           
-
-// Create a cache backed by DRAM
-const cache = new S3FIFO({ size: 10 }); 
-
-// Add an object to the cache
-cache.put("key", "value", { ttl: 10 });
-
-// Get an object from the cache
-const value = cache.get("key");
-console.log(value); // Outputs: "value"
-
-// Remove an object from the cache
-cache.delete("key");
-
-// Check if an object is in the cache
-const exists = cache.has("key");
-console.log(exists); // Outputs: false</code>    
-  </pre>
+    <div class="libs">
+      <h3>In your language</h3>
+      <p>Production cache libraries that implement S3-FIFO.</p>
+      <ul class="chips">
+        {{ chip("foyer", "https://github.com/foyer-rs/foyer/blob/main/foyer-memory/src/eviction/s3fifo.rs", "https://avatars.githubusercontent.com/foyer-rs?s=64", "Rust") }}
+        {{ chip("TinyUFO", "https://github.com/cloudflare/pingora/tree/main/tinyufo", "https://avatars.githubusercontent.com/cloudflare?s=64", "Rust") }}
+        {{ chip("golang-fifo", "https://github.com/scalalang2/golang-fifo", "https://avatars.githubusercontent.com/scalalang2?s=64", "Go") }}
+        {{ chip("samber/hot", "https://github.com/samber/hot", "https://avatars.githubusercontent.com/samber?s=64", "Go") }}
+        {{ chip("otter", "https://github.com/maypok86/otter/tree/v1.2.4", "https://avatars.githubusercontent.com/maypok86?s=64", "Go, v1") }}
+        {{ chip("spica", "https://github.com/falsandtru/spica/blob/master/src/s3-fifo.ts", "https://avatars.githubusercontent.com/falsandtru?s=64", "TypeScript") }}
+        {{ chip("libCacheSim", "https://libcachesim.com", "https://avatars.githubusercontent.com/cacheMon?s=64", "C, simulator") }}
+      </ul>
+    </div>
   </div>
-
-  <p class="text-align-center t-b text-dark h2">More languages to come!</p>
-  <p class="text-align-center text-dark h3 mb-5">Contact us if you're interested</p>
-
 </section>
 
 
-
-<section class="section-dark-body w-100" , id="whydoeswork">
+<section class="section-dark-body w-100" id="whydoeswork">
   <div class="text-align-center t-b text-white h1 mt-5">
     <p>Why does S3-FIFO work?</p>
   </div>
 
   <p class="text-align-center t-b text-white h2-2 my-2">
     A huge number of objects accessed once (called one-hit wonders) calling for
-    <a href="https://s3fifo.com/blog/2023/06/01/fifo-is-better-than-lru-the-power-of-lazy-promotion-and-quick-demotion/"
-      target="_blank" class="custom-link">quick demotion</a>:<br>
+    <a href="blog/2023/06/01/fifo-is-better-than-lru-the-power-of-lazy-promotion-and-quick-demotion/"
+      class="custom-link">quick demotion</a>:<br>
     S3-FIFO <span class="h2-2 italic">quickly</span> removes objects that will not be accessed in the future
   </p>
 
@@ -239,8 +363,8 @@ console.log(exists); // Outputs: false</code>
     <div class="ctx-header-img d-lg">
       <!-- onehitwonder -->
       <div class="mx-auto w-8/10 overflow-hidden" style="margin-top: 0.5rem;">
-        <canvas id="onehitwonder-bar-chart" style="width: 90%; height: 200%;"></canvas>
-        <!-- <canvas id="onehitwonder-bar-chart" class="onehitwonder-chart-style"></canvas> -->
+        <canvas id="onehitwonder-bar-chart" style="width: 90%; height: 200%;"
+          aria-label="Fraction of objects evicted by LRU that were never reused, by cache size, for Zipf, MSR and Twitter workloads" role="img"></canvas>
       </div>
       <p class="text-align-center t-b text-white h3">Figure shows that most of the objects evicted by LRU spend long
         time in the cache without reuse. </p>
@@ -250,102 +374,127 @@ console.log(exists); // Outputs: false</code>
 </section>
 
 
-<section class="section-white-body w-100" , id="adoption">
+<section class="section-white-body w-100" id="adoption">
   <div class="text-align-center t-b text-dark h1-2 mt-4">
     <p>Adoption</p>
   </div>
 
-  <div class="text-align-center text-dark h3 my-3">
-    <p>Google, VMware,
-      <a target="_blank" class="custom-link-text"
-        href="https://github.com/redpanda-data/redpanda/pull/14759">Redpanda</a>,
-      <a target="_blank" class="custom-link-text"
-        href="https://github.com/cloudflare/pingora/tree/main/tinyufo">Cloudflare</a>,
-      <a target="_blank" class="custom-link-text"
-        href="https://github.com/risingwavelabs/risingwave/pull/16208">Risingwave</a>,
-        <a target="_blank" class="custom-link-text"
-        href="https://github.com/dmlc/dgl/pull/7492">Deep Graph Library</a>,
-      <a target="_blank" class="custom-link-text"
-        href="https://github.com/matrixorigin/matrixone/blob/c582b7d3ce8f7c177f2bd268a37375ae1a5b18bd/pkg/fileservice/fifocache/fifo.go#L24">MatrixOne</a>, 
-      and <a target="_blank" class="custom-link-text"
-        href="https://github.com/ua-parser/uap-python/pull/197/commits/9b24838f3a3b57873eee0459ca161d5d8b6ddf16">uap-python</a>,
+  <div class="adopt">
+    <div class="adopt-group">
+      <h3>Systems running S3-FIFO</h3>
+      <ul class="chips">
+        {{ chip("Cloudflare Pingora", "https://github.com/cloudflare/pingora/tree/main/tinyufo", "https://avatars.githubusercontent.com/cloudflare?s=64") }}
+        {{ chip("Apache Traffic Server", "https://github.com/apache/trafficserver/pull/13255", "https://avatars.githubusercontent.com/apache?s=64") }}
+        {{ chip("YDB", "https://github.com/ydb-platform/ydb/pull/22818", "https://avatars.githubusercontent.com/ydb-platform?s=64") }}
+        {{ chip("InfluxDB 3", "https://github.com/influxdata/influxdb/blob/main/core/object_store_mem_cache/src/cache_system/s3_fifo_cache/s3_fifo.rs", "https://avatars.githubusercontent.com/influxdata?s=64") }}
+        {{ chip("Redpanda", "https://github.com/redpanda-data/redpanda/blob/dev/src/v/utils/s3_fifo.h", "https://avatars.githubusercontent.com/redpanda-data?s=64") }}
+        {{ chip("RisingWave", "https://github.com/risingwavelabs/risingwave/pull/16208", "https://avatars.githubusercontent.com/risingwavelabs?s=64") }}
+        {{ chip("vLLM AIBrix", "https://github.com/vllm-project/aibrix/blob/main/python/aibrix_kvcache/aibrix_kvcache/envs.py", "https://avatars.githubusercontent.com/vllm-project?s=64") }}
+        {{ chip("Feldera", "https://github.com/feldera/feldera/blob/main/crates/feldera-types/src/config/dev_tweaks.rs", "https://avatars.githubusercontent.com/feldera?s=64") }}
+        {{ chip("ZeroFS", "https://github.com/Barre/ZeroFS/blob/main/zerofs/src/cli/server.rs", "https://avatars.githubusercontent.com/Barre?s=64") }}
+        {{ chip("Deep Graph Library", "https://github.com/dmlc/dgl/pull/7492", "https://avatars.githubusercontent.com/dmlc?s=64") }}
+        {{ chip("MatrixOne", "https://github.com/matrixorigin/matrixone/blob/c582b7d3ce8f7c177f2bd268a37375ae1a5b18bd/pkg/fileservice/fifocache/fifo.go#L24", "https://avatars.githubusercontent.com/matrixorigin?s=64") }}
+        {{ chip("Pelikan", "https://github.com/pelikan-io/cache-rs/pull/2", "https://avatars.githubusercontent.com/pelikan-io?s=64") }}
+        {{ chip("Linera", "https://github.com/linera-io/linera-protocol/blob/main/linera-cache/README.md", "https://avatars.githubusercontent.com/linera-io?s=64") }}
+        {{ chip("Buildkite content-cache", "https://github.com/buildkite/content-cache/blob/main/store/s3fifo/s3fifo.go", "https://avatars.githubusercontent.com/buildkite?s=64") }}
+        {{ chip("Flowtide", "https://github.com/koralium/flowtide/blob/main/docs/docs/internal/storage/cache.md", "https://avatars.githubusercontent.com/koralium?s=64") }}
+        {{ chip("uap-python", "https://github.com/ua-parser/uap-python/pull/197", "https://avatars.githubusercontent.com/ua-parser?s=64") }}
+        {{ private("Google") }}
+        {{ private("VMware") }}
+        {{ private("Amazon Dynamo") }}
+      </ul>
+    </div>
+
+    <div class="adopt-group">
+      <h3>Running S3-FIFO-like eviction through quick_cache
+        <span>&mdash; its README names S3-FIFO; its docs call it a Clock-PRO variant &ldquo;very similar to&rdquo; S3-FIFO</span></h3>
+      <ul class="chips">
+        {{ chip("X recommendation algorithm", "https://github.com/xai-org/x-algorithm/blob/main/visibility-filtering/hydration/fallback_cache.rs", "https://avatars.githubusercontent.com/xai-org?s=64") }}
+        {{ chip("Next.js Turbopack", "https://github.com/vercel/next.js/blob/canary/turbopack/crates/turbo-persistence/src/static_sorted_file.rs", "https://avatars.githubusercontent.com/vercel?s=64") }}
+        {{ chip("PostHog", "https://github.com/PostHog/posthog/blob/master/rust/property-defs-rs/src/update_cache.rs", "https://avatars.githubusercontent.com/PostHog?s=64") }}
+        {{ chip("SurrealDB", "https://github.com/surrealdb/surrealdb/blob/main/surrealdb/core/src/kvs/cache/ds/mod.rs", "https://avatars.githubusercontent.com/surrealdb?s=64") }}
+        {{ chip("Servo", "https://github.com/servo/servo/blob/main/components/net/http_cache.rs", "https://avatars.githubusercontent.com/servo?s=64") }}
+        {{ chip("Windmill", "https://github.com/windmill-labs/windmill/blob/main/backend/windmill-common/src/cache.rs", "https://avatars.githubusercontent.com/windmill-labs?s=64") }}
+        {{ chip("Sui", "https://github.com/MystenLabs/sui/blob/main/external-crates/move/crates/move-vm-runtime/src/cache/move_cache.rs", "https://avatars.githubusercontent.com/MystenLabs?s=64") }}
+        {{ chip("Aptos", "https://github.com/aptos-labs/aptos-core/blob/main/types/src/keyless/bn254_circom.rs", "https://avatars.githubusercontent.com/aptos-labs?s=64") }}
+        {{ chip("Lance", "https://github.com/lance-format/lance/blob/main/rust/lance/src/session.rs", "https://avatars.githubusercontent.com/lance-format?s=64") }}
+        {{ chip("AWS LLRT", "https://github.com/awslabs/llrt/blob/main/libs/llrt_dns_cache/src/lib.rs", "https://avatars.githubusercontent.com/awslabs?s=64") }}
+        {{ chip("Warpgate", "https://github.com/warp-tech/warpgate/blob/main/warpgate-common-cache/src/lib.rs", "https://avatars.githubusercontent.com/warp-tech?s=64") }}
+        {{ chip("agentgateway", "https://github.com/agentgateway/agentgateway/blob/main/crates/agentgateway/src/http/localratelimit.rs", "https://avatars.githubusercontent.com/agentgateway?s=64") }}
+        {{ chip("TrailBase", "https://github.com/trailbaseio/trailbase/blob/main/crates/core/src/connection.rs", "https://avatars.githubusercontent.com/trailbaseio?s=64") }}
+        {{ chip("Fjall", "https://github.com/fjall-rs/lsm-tree/blob/main/src/cache.rs", "https://avatars.githubusercontent.com/fjall-rs?s=64") }}
+        {{ chip("Forest", "https://github.com/ChainSafe/forest/blob/main/src/utils/cache/size_tracking.rs", "https://avatars.githubusercontent.com/ChainSafe?s=64") }}
+        {{ chip("Fuel Core", "https://github.com/FuelLabs/fuel-core/blob/master/crates/services/p2p/src/cached_view.rs", "https://avatars.githubusercontent.com/FuelLabs?s=64") }}
+        {{ chip("rustic", "https://github.com/rustic-rs/rustic_core/blob/main/crates/core/src/repository.rs", "https://avatars.githubusercontent.com/rustic-rs?s=64") }}
+        {{ chip("Loro", "https://github.com/loro-dev/loro/blob/main/crates/kv-store/src/sstable.rs", "https://avatars.githubusercontent.com/loro-dev?s=64") }}
+        {{ chip("Icechunk", "https://github.com/earth-mover/icechunk/blob/main/icechunk/src/asset_manager.rs", "https://avatars.githubusercontent.com/earth-mover?s=64") }}
+        {{ chip("Stalwart", "https://github.com/stalwartlabs/stalwart/blob/main/crates/utils/src/cache.rs", "https://avatars.githubusercontent.com/stalwartlabs?s=64") }}
+      </ul>
+    </div>
+
+    <div class="adopt-group">
+      <h3>In progress upstream <span>&mdash; open pull requests and proposals</span></h3>
+      <ul class="chips">
+        {{ chip("RocksDB", "https://github.com/facebook/rocksdb/pull/15353", "https://avatars.githubusercontent.com/facebook?s=64") }}
+        {{ chip("OpenSearch", "https://github.com/opensearch-project/OpenSearch/pull/22146", "https://avatars.githubusercontent.com/opensearch-project?s=64") }}
+        {{ chip("rustls", "https://github.com/rustls/rustls/pull/2865", "https://avatars.githubusercontent.com/rustls?s=64") }}
+        {{ chip("389 Directory Server", "https://github.com/389ds/389-ds-base/issues/7489", "https://avatars.githubusercontent.com/389ds?s=64") }}
+        {{ chip("Qdrant", "https://github.com/qdrant/qdrant/blob/dev/lib/common/common/src/universal_io/disk_cache/controller.rs", "https://avatars.githubusercontent.com/qdrant?s=64", "quick_cache, not yet enabled") }}
+      </ul>
+    </div>
+
+    <div class="adopt-group">
+      <h3>Designs inspired by S3-FIFO</h3>
+      <ul class="chips">
+        {{ chip("Apache Pulsar", "https://github.com/apache/pulsar/blob/master/pip/pip-430.md", "https://avatars.githubusercontent.com/apache?s=64") }}
+        {{ chip("Syndica Sig", "https://github.com/Syndica/sig/blob/main/v1/src/accountsdb/buffer_pool.zig", "https://avatars.githubusercontent.com/Syndica?s=64") }}
+      </ul>
+    </div>
+
+    <div class="adopt-group">
+      <h3>More implementations</h3>
+      <ul class="chips">
+        {{ chip("quick-cache", "https://github.com/arthurprs/quick-cache", "https://avatars.githubusercontent.com/arthurprs?s=64", "Rust, S3-FIFO-like") }}
+        {{ chip("s3-fifo", "https://github.com/qsib-cbie/s3-fifo", "https://avatars.githubusercontent.com/qsib-cbie?s=64", "Rust") }}
+        {{ chip("S3-FIFO", "https://github.com/totoroyyb/S3-FIFO", "https://avatars.githubusercontent.com/totoroyyb?s=64", "Rust") }}
+        {{ chip("s3fifo", "https://github.com/wfraser/s3fifo", "https://avatars.githubusercontent.com/wfraser?s=64", "Rust") }}
+        {{ chip("go-s3-fifo", "https://github.com/Disdjj/go-s3-fifo", "https://avatars.githubusercontent.com/Disdjj?s=64", "Go") }}
+        {{ chip("s3fifo.py", "https://github.com/cmcaine/s3fifo.py", "https://avatars.githubusercontent.com/cmcaine?s=64", "Python") }}
+        {{ chip("s3fifo_cpp", "https://github.com/thelamon/s3fifo_cpp", "https://avatars.githubusercontent.com/thelamon?s=64", "C++") }}
+        {{ chip("S3-FIFO", "https://github.com/Ilistratov/S3-FIFO", "https://avatars.githubusercontent.com/Ilistratov?s=64", "C++") }}
+        {{ chip("s3fifo", "https://github.com/malets12/s3fifo", "https://avatars.githubusercontent.com/malets12?s=64", "Java") }}
+        {{ chip("S3FCache", "https://github.com/Saalik/S3FCache", "https://avatars.githubusercontent.com/Saalik?s=64", "Java") }}
+        {{ chip("ziglang-caches", "https://github.com/Jeevananthan-23/ziglang-caches", "https://avatars.githubusercontent.com/Jeevananthan-23?s=64", "Zig") }}
+        {{ chip("s3-fifo-cache", "https://github.com/Tom910/s3-fifo-cache", "https://avatars.githubusercontent.com/Tom910?s=64", "JavaScript") }}
+      </ul>
+    </div>
+
+    <div class="adopt-group">
+      <h3>Discussed and written about</h3>
+      <ul class="chips">
+        {{ chip("Aleksey Charapko’s reading group", "https://charap.co/winter-2023-2024-reading-group-papers/") }}
+        {{ chip("UIUC CS525", "https://docs.google.com/document/d/1XX5ksgLVnkPE-dfeVDZPlv5NMbgxJqWmi13YEQt1t1o/edit#heading=h.k6znr7t8urvp") }}
+        {{ chip("Wikipedia", "https://en.wikipedia.org/wiki/Cache_replacement_policies") }}
+        {{ chip("PolyScale blog", "https://www.polyscale.ai/blog/one-hit-expectation/") }}
+        {{ chip("amarchenko.dev", "https://amarchenko.dev/blog/2023-10-12-memory-cache/") }}
+        {{ chip("Sidhion", "https://sidhion.com/blog/posts/function-image-eviction/") }}
+        {{ chip("Pointer", "https://www.pointer.io/archives/0a85ffc4cd/", None, "newsletter") }}
+        {{ chip("Trivium", "https://leahneukirchen.org/trivium/2023-09", None, "newsletter") }}
+        {{ chip("Rate Labs blog", "https://medium.com/rate-labs/%EC%96%B4%EB%96%A4-%EC%86%8C%EA%B0%80-%EC%9D%BC%EC%9D%84-%EB%8D%94-%EC%9E%98%ED%95%A9%EB%8B%88%EA%B9%8C-fifo%EA%B0%80-lru%EB%B3%B4%EB%8B%A4-%EB%82%AB%EC%8A%B5%EB%8B%88%EB%8B%A4%EC%9A%94-1a49b9060ce4", None, "Korean") }}
+        {{ chip("tiisys", "https://tiisys.com/blog/2023/12/06/post-130211/2/", None, "Japanese") }}
+        {{ chip("Habr", "https://habr.com/ru/companies/ruvds/articles/759270/", None, "Russian") }}
+        {{ chip("BBConf", "https://bbconf.kr/archive/", None, "Korean") }}
+      </ul>
+    </div>
+
+    <p class="adopt-note">
+      Shipped S3-FIFO somewhere? <a href="mailto:cachemon.org@gmail.com">Tell us</a> &mdash; we would love to list you,
+      and to hear how it went.
     </p>
-    <!-- other libraries -->
-    <!-- https://github.com/shenghansen/EdgeKV/blob/master/src/edge/S3FIFO.cpp -->
-
-    <p> mulitple large open-source libraries, such as
-      <a target="_blank" class="custom-link-text" href="https://github.com/maypok86/otter">otter (Golang)</a>,
-      <a target="_blank" class="custom-link-text"
-        href="https://github.com/surrealdb/surrealkv/blob/main/src/storage/cache/s3fifo.rs">surrealkv (Rust)</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/arthurprs/quick-cache">quick-cache
-        (Rust)</a>,
-      <a target="_blank" class="custom-link-text"
-        href="https://github.com/falsandtru/spica/blob/master/src/s3-fifo.ts">spica (Javascript)</a>,
-      <a target="_blank" class="custom-link-text"
-        href="https://github.com/foyer-rs/foyer/pull/303">foyer (Rust)</a>,
-      <br>
-      and many other cache libraries in
-      Golang 
-      <a target="_blank" class="custom-link-text" href="https://github.com/scalalang2/golang-fifo">[1]</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/Disdjj/go-s3-fifo">[2]</a>,
-      
-      Python <a target="_blank" class="custom-link-text" href="https://github.com/cmcaine/s3fifo.py">[1]</a>,
-      <!-- Python <a target="_blank" class="custom-link-text" href="https://github.com/66RING/the-chaos">[1]</a>, -->
-      
-      Rust <a target="_blank" class="custom-link-text" href="https://github.com/totoroyyb/S3-FIFO">[1]</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/wfraser/s3fifo">[2]</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/willb0/s3-fifo-rs">[3]</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/qsib-cbie/s3-fifo">[4]</a>,
-      
-      C++ <a target="_blank" class="custom-link-text" href="https://github.com/thelamon/s3fifo_cpp">[1]</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/Ilistratov/S3-FIFO">[2]</a>,
-      
-      Java <a target="_blank" class="custom-link-text" href="https://github.com/malets12/s3fifo">[1]</a>,
-      <a target="_blank" class="custom-link-text" href="https://github.com/Saalik/S3FCache">[2]</a>,
-      
-      Zig <a target="_blank" class="custom-link-text" href="https://github.com/Jeevananthan-23/ziglang-caches">[1]</a>,
-
-      Javascript <a target="_blank" class="custom-link-text" href="https://github.com/Tom910/s3-fifo-cache">[1]</a>.
-    </p>
-    <p>
-      Discussed in <a target="_blank" class="custom-link-text"
-        href="https://charap.co/winter-2023-2024-reading-group-papers/">Aleksey's Online Reading Group</a>,
-      <a target="_blank" class="custom-link-text"
-        href="https://docs.google.com/document/d/1XX5ksgLVnkPE-dfeVDZPlv5NMbgxJqWmi13YEQt1t1o/edit#heading=h.k6znr7t8urvp">
-        UIUC CS525</a>.
-    </p>
-    <p>
-      Covered in blog
-      <a target="_blank" class="custom-link-text" href="https://www.polyscale.ai/blog/one-hit-expectation/">[1]</a>,
-      <a target="_blank" class="custom-link-text" href="https://amarchenko.dev/blog/2023-10-12-memory-cache/">[2]</a>,
-      <a target="_blank" class="custom-link-text"
-        href="https://sidhion.com/blog/posts/function-image-eviction/">[3]</a>,
-      <a target="_blank" class="custom-link-text"
-        href="https://medium.com/rate-labs/%EC%96%B4%EB%96%A4-%EC%86%8C%EA%B0%80-%EC%9D%BC%EC%9D%84-%EB%8D%94-%EC%9E%98%ED%95%A9%EB%8B%88%EA%B9%8C-fifo%EA%B0%80-lru%EB%B3%B4%EB%8B%A4-%EB%82%AB%EC%8A%B5%EB%8B%88%EB%8B%A4%EC%9A%94-1a49b9060ce4">[4]</a>
-      in Korean,
-      <a target="_blank" class="custom-link-text" href="https://tiisys.com/blog/2023/12/06/post-130211/2/">[5]</a> in
-      Japanese,
-      <a target="_blank" class="custom-link-text" href="https://habr.com/ru/companies/ruvds/articles/759270/">[6]</a> in
-      Russian,
-
-      newsletters 
-      <a target="_blank" class="custom-link-text"
-        href="https://www.pointer.io/archives/0a85ffc4cd/">[1]</a>,
-      <!-- <a target="_blank" class="custom-link-text"
-        href="https://newsletter.programmingdigest.net/p/design-philosophy-great-tables">[2]</a>, -->
-      <a target="_blank" class="custom-link-text" href="https://leahneukirchen.org/trivium/2023-09">[2]</a>,
-      conference <a target="_blank" class="custom-link-text" href="https://bbconf.kr/archive/">in Korea</a>, <a
-        target="_blank" class="custom-link-text"
-        href="https://ftp.yuni.dev/bbconf/2023-winter/LDH_SIEVE_S3_FIFO_Cache_%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_%EC%86%8C%EA%B0%9C.pdf">[2]</a>
-
-    </p>
-
-    <p> let us know if you would like to be featured here.</p>
   </div>
-
 </section>
 
-<section class="section-white-body w-100" , id="sponsors">
+<section class="section-white-body w-100" id="sponsors">
   <div class="text-align-center t-b text-dark h1-2 mt-4">
     <p>Acknowledgement</p>
   </div>
@@ -354,9 +503,8 @@ console.log(exists); // Outputs: false</code>
     <p><span class="t-b italic h2-2">Sponsors:</span><br>
       <a href="https://csd.cmu.edu/" target="_blank" class="custom-link-text">Carnegie Mellon University</a> <a
         href="https://www.pdl.cmu.edu/index.shtml" target="_blank" class="custom-link-text">Parallel Data Laboratory</a>
-      <a href="https://www.cs.emory.edu/home/" target="_blank" class="custom-link-text">Emory University</a> <a
-        href="https://simbiosys.mathcs.emory.edu/home" target="_blank" class="custom-link-text">SimBioSys Lab</a><br>
-      Meta, Google Cloud, AWS, Microsoft Azure, CloudLab, Sloan Foundation VMware, and NSF
+      <a href="https://www.cs.emory.edu/home/" target="_blank" class="custom-link-text">Emory University</a> SimBioSys Lab<br>
+      Meta, Google Cloud, AWS, Microsoft Azure, CloudLab, Sloan Foundation, VMware, and NSF
     </p><br>
     <p><span class="t-b italic h2-2">Dataset source:</span><br>
       Twitter, Meta, Tencent, Microsoft, Wikimedia, CloudPhysics</p>
@@ -365,21 +513,26 @@ console.log(exists); // Outputs: false</code>
 </section>
 
 
-<section class="section-white-body w-100" , id="contactus">
+<section class="section-white-body w-100" id="contactus">
   <div class="text-align-center t-b text-dark h1-2 mt-4">
     <p>Contact Us</p>
   </div>
 
   <div class="text-align-center t-500 text-dark h3 mt-3 mb-5">
-    <a href="mailto:cachemon.org@gmail.com" target="_blank" class="custom-link">
+    <a href="mailto:cachemon.org@gmail.com" target="_blank" class="custom-link" aria-label="Email">
       <i class="fa-solid fa-envelope fa-2x"></i></a>
     <a href="https://join.slack.com/t/cachemon/shared_invite/zt-20pjil08z-f9d1Ui~p1gfBnsedHP9x8Q" target="_blank"
-      class="custom-link">
+      class="custom-link" aria-label="Slack">
       <i class="fa-brands fa-slack fa-2x"></i></a>
-    <a href="https://twitter.com/cachemon_org" target="_blank" class="custom-link">
+    <a href="https://twitter.com/cachemon_org" target="_blank" class="custom-link" aria-label="X (Twitter)">
       <i class="fa-brands fa-twitter fa-2x"></i></a>
-    <a href="https://github.com/cacheMon" target="_blank" class="custom-link">
+    <a href="https://github.com/cacheMon" target="_blank" class="custom-link" aria-label="GitHub">
       <i class="fa-brands fa-github fa-2x"></i></a>
+    <p class="more-links">
+      More from cacheMon: <a href="https://sievecache.com">SIEVE</a> &middot;
+      <a href="https://libcachesim.com">libCacheSim</a> &middot;
+      <a href="https://cachemon.org">cachemon.org</a>
+    </p>
   </div>
 
 </section>
@@ -390,7 +543,7 @@ console.log(exists); // Outputs: false</code>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.js"
     integrity="sha512-opXrgVcTHsEVdBUZqTPlW9S8+99hNbaHmXtAdXXc61OUU6gOII5ku/PzZFqexHXc3hnK8IrJKHo+T7O4GRIJcw=="
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="/mychart.js"></script>
+  <script type="text/javascript" src="{{ 'mychart.js' | url }}"></script>
 </footer>
 
 

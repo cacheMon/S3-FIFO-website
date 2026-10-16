@@ -16,6 +16,31 @@ function scrollToLearnMoreSection() {
 // }
 
 
+// The charts were tuned for desktop widths. Scale their fonts to the space
+// each one actually gets, so they stay readable on a phone, and skip any
+// canvas that is not on screen (Chart.js cannot lay out a zero-width chart).
+function scaleFonts(node, k) {
+  if (!node || typeof node !== 'object') return;
+  Object.keys(node).forEach(function (key) {
+    if (key === 'font' && node.font && typeof node.font.size === 'number') {
+      node.font.size = Math.max(10, Math.round(node.font.size * k));
+    } else {
+      scaleFonts(node[key], k);
+    }
+  });
+}
+
+function makeChart(id, config) {
+  var canvas = document.getElementById(id);
+  var width = canvas && canvas.parentElement.clientWidth;
+  if (!width) return null;
+  scaleFonts(config.options, Math.min(1, width / 640));
+  // Legends and slanted labels eat most of a 2:1 chart this narrow
+  if (width < 640) config.options.aspectRatio = 1.1;
+  return new Chart(canvas, config);
+}
+
+
 // barchar (performance-chart)
 // Data
 const dataChartBarDoubleDatasetsExample = {
@@ -93,8 +118,7 @@ const optionsChartBarDoubleDatasetsExample = {
 };
 
 
-var myChart = new Chart(
-  document.getElementById('bar-chart'), {
+var myChart = makeChart('bar-chart', {
   type: 'bar',
   data: dataChartBarDoubleDatasetsExample,
   options: optionsChartBarDoubleDatasetsExample
@@ -169,8 +193,7 @@ const optionsThroughput = {
   },
 };
 
-const chart2 = new Chart(
-  document.getElementById('throughput-chart'), {
+const chart2 = makeChart('throughput-chart', {
   type: 'line',
   data: dataLine,
   options: optionsThroughput
@@ -247,8 +270,7 @@ const optionsdataCachesizeBarChart = {
   },
 };
 
-const chart3 = new Chart(
-  document.getElementById('cachesize-bar-chart'), {
+const chart3 = makeChart('cachesize-bar-chart', {
   type: 'bar',
   data: dataCachesizeBarChart,
   options: optionsdataCachesizeBarChart
@@ -335,8 +357,7 @@ const optionsdataOnehitwonderBarChart = {
   },
 };
 
-const chart4 = new Chart(
-  document.getElementById('onehitwonder-bar-chart'), {
+const chart4 = makeChart('onehitwonder-bar-chart', {
   type: 'bar',
   data: dataOnehitwonderBarChart,
   options: optionsdataOnehitwonderBarChart
