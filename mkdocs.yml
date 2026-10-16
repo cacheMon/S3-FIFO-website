@@ -53,9 +53,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  font:
-    text: Roboto
-    code: Roboto Mono
+  # Inter and JetBrains Mono are loaded in material/main.html
+  font: false
   favicon: assets/images/logos/s3fifo-logo1.svg
   logo: assets/images/logos/s3fifo-logo1.svg
   # icon:
@@ -75,6 +74,8 @@ plugins:
 
 # Customization
 extra:
+  # Shown in the header in place of the long site name
+  short_name: S3-FIFO
   annotate:
     json: [.s2]
   analytics:

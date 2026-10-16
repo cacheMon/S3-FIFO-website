@@ -23,15 +23,34 @@ pip3 install mkdocs-minify-plugin
 mkdocs serve
 ```
 
+## How the landing page is built
+- `material/home.html` is the landing page template. It extends `main.html`, which adds the fonts,
+  the link-preview tags and analytics to every page.
+- `material/home.css` styles the landing page. The colors are `--s3-*` tokens defined for light and
+  dark in `docs/stylesheets/extra.css`, which also styles the header, the footer and the blog.
+- `material/partials/header.html` is Material's header with two changes: it shows the short name
+  (`extra.short_name` in `mkdocs.yml`), and on wide screens the Home and Blog tabs sit in the same row.
+- `material/sim.js` runs the S3-FIFO simulation in "How it works". It follows libCacheSim's
+  `S3FIFO.c`: two hits in S promote an object to M, M reinserts objects whose counter is above zero,
+  and G holds as many keys as M. Run `node -e "require('./material/sim.js')"` to load its cache
+  model without a browser.
+- `material/mychart.js` draws the four charts with Chart.js and builds their data tables. The series
+  colors were checked for color-vision deficiency in both schemes; keep LRU blue and S3-FIFO orange.
+
 ## Editing the adoption list
-The landing page lives in `material/home.html`. Each adopter is one line using the
-`chip(name, link, avatar, tag)` macro defined just above the Adoption section:
+Adopters are data at the top of `material/home.html`, one row per entry:
 
 ```jinja
-{{ chip("ClickHouse", "https://github.com/ClickHouse/ClickHouse/pull/123435", "https://avatars.githubusercontent.com/ClickHouse?s=64") }}
+("ClickHouse", "https://github.com/ClickHouse/ClickHouse/pull/123435", "ClickHouse"),
 ```
 
+The fields are the name, the link, and the GitHub owner whose avatar to show. Section headings count
+the rows, so adding a row is all it takes.
+
 - Link to the code, merged PR or docs that show S3-FIFO in use, not just the project homepage.
-- Use `https://avatars.githubusercontent.com/<org>?s=64` for the avatar; it needs no redirect.
-- Open pull requests go under "In progress upstream" until they merge.
+- Add a new owner to `avatar_ids` with its numeric GitHub id. The name-based avatar URL returns a
+  blank default for many organizations; `curl -sI https://github.com/<owner>.png` shows the id in
+  the redirect (`/u/<id>`).
+- Adopters with no public source go in `private`; they show as dashed tiles without a link.
+- Open pull requests go under `in_progress` until they merge.
 - Keep the list in sync with the [cacheMon homepage](https://cachemon.org/#production).
